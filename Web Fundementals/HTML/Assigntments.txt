@@ -1,0 +1,18 @@
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\Web Fundementals\HTML>dir
+ Volume in drive C is OS
+ Volume Serial Number is 4AE6-9B11
+
+ Directory of C:\Users\Scott Eskridge\Desktop\DojoAssignments\Web Fundementals\HTML
+
+02/21/2017  03:37 PM    <DIR>          .
+02/21/2017  03:37 PM    <DIR>          ..
+02/21/2017  03:35 PM                 0 About.txt
+02/21/2017  03:37 PM                 0 indentation.html
+               2 File(s)              0 bytes
+               2 Dir(s)  888,993,050,624 bytes free
+
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\Web Fundementals\HTML>dir /b /s
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\Web Fundementals\HTML\About.txt
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\Web Fundementals\HTML\indentation.html
+
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\Web Fundementals\HTML>

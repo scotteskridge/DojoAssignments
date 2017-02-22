@@ -1,0 +1,1 @@
+I utilized the Github Desktop interface to publish and sync all files. I then added the readme.txt and made a few changes and commited those changes.

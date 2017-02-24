@@ -1,0 +1,210 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+ border: 0px;
+ /*outline: 1px dotted red;*/
+}
+
+#wrapper{
+
+ width: 950px;
+ /*background-color: white;*/
+ margin: auto;
+ padding: 10px;
+}
+
+#header{
+ width: auto;
+ background-color: white;
+ margin: auto;
+ padding: 10px;
+ font-style: normal;
+ font-family: cursive;
+ /*display: inline-block;*/
+}
+#name{
+  display: inline;
+}
+#title{
+  display: inline;
+  margin-left: 340px;
+}
+
+#mainbody{
+
+ width: auto;
+ /*border-color: black;*/
+ border-width: 2px;
+ background-color: orange;
+ margin: 0px;
+ padding: 10px;
+ background: radial-gradient(white, #29181D);
+}
+
+#headshot_And_About{
+ width: auto;
+ /*background-color: green;*/
+ margin: 0px;
+ padding: 0px;
+}
+
+#headshot{
+  width: 400px;
+}
+.addBorder {
+  /* Thickness, Style, and Color */
+  border: 10px solid #D4D4D4;
+}
+.header{
+  background: #white;
+ background: radial-gradient(#878593, #D4D4D4);
+height: 35px;
+padding: 5px 5px 5px 15px;
+color: white;
+font-family: sans-serif;
+}
+.textbox{
+  background-color: White;
+  /*height: inherit;*/
+  vertical-align: top;
+  padding: 10px;
+}
+
+
+
+
+#aboutme {
+  background-color: White;
+  display: inline-block;
+  width: 485px;
+  height: 283px;
+  padding: 0px;
+  margin-left: 20px;
+  vertical-align: top;
+
+}
+
+#projects{
+ width: auto;
+ /*background-color: purple;*/
+ margin: 0px;
+ padding: 0px;
+}
+
+#La_Mode{
+ width: 275px;
+ display: inline-block;
+ /*background-color: black;*/
+ margin: 15px;
+ padding: 0px;
+}
+.imgsize{
+   width: inherit;
+   margin-bottom: -5px;
+}
+
+.logos{
+ width: inherit;
+ height: 250px;
+ background-color: white;
+ margin: 0px;
+ padding-bottom: 10px;
+}
+
+#Family_Contacts{
+  width: 275px;
+  display: inline-block;
+ background-color: yellow;
+ margin: 15px;
+ padding: 0px;
+}
+
+#fiveEleven{
+  width: 275px;
+  display: inline-block;
+ background-color: pink;
+ margin: 15px;
+ padding: 0px;
+}
+
+
+.badge{
+  display: inline-block;
+  width: 43px;
+  margin: 4px;
+}
+
+.greenbutton{
+  background-color: #407D61;
+   border-radius: 15px;
+   text-align:center;
+
+   display: flex;
+   flex-direction: column;     /* stack flex items vertically */
+
+    align-items: center;        /* center items horizontally, in this case */
+
+   width: 100px;
+   margin-top: 35px;
+   margin-left: auto;
+   margin-right: auto;
+   font-family: sans-serif;
+   font-weight: bold;
+   color: white;
+   font-size: 15px;
+   /*display:inline-flex;*/
+   padding: 5px 5px 5px 5px;
+
+  border: 3px solid #1E4633;
+  /*position: relative;*/
+    bottom: 0;
+    /*left: 0;*/
+}
+.buttonalign{
+  /*width: 50%;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+
+  /*margin: 0px auto auto 0px;*/
+}
+
+#footer{
+  display: flex;
+  flex-direction: column;     /* stack flex items vertically */
+
+   align-items: center;        /* center items horizontally, in this case */
+   width: auto;
+   background-color: white;
+   margin: 0px;
+   padding: 0px;
+}
+.center{
+  display: flex;
+  flex-direction: column;     /* stack flex items vertically */
+
+   align-items: center;        /* center items horizontally, in this case */
+   width: auto;
+}
+.sociallogo{
+  display: inline-block;
+  width: 20px;
+  margin: 4px;
+
+}
+
+
+#social{
+  display: inline-block;
+  width: 700px;
+  text-align: center;
+}
+.logo{
+  width: 20px;
+}
+
+#leftlogo{
+  margin-left: 20px;
+
+}

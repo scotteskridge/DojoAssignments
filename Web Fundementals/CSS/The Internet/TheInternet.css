@@ -1,0 +1,118 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: sans-serif;
+  outline: 1px dashed red;
+  color: inherit;
+}
+
+.shadow{
+  box-shadow: 3px 3px 3px #1F1F1F;
+}
+.bluetext{
+  color: #2C6A9F;
+}
+.redtext{
+  color: red;
+}
+#wrapper{
+  width: 950px;
+  height: auto;
+  background: white;
+  margin: auto;
+  padding: 5px;
+  position: relative;
+}
+
+#header{
+  width:auto;
+  height: auto;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+#title{
+  margin-left: 100px;
+  font-size: 50px;
+}
+#theWWW{
+  background: radial-gradient( #5283AB,#3374AC);
+  color: white;
+  font-size: 35px;
+  margin-top: 30px;
+}
+
+#theglobe{
+  position: absolute;
+  width:100px;
+  height: auto;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+#bodyleft{
+  width:20%;
+  height: 600px;
+  padding: 5px 5px 5px 5px ;
+  /*margin: 0px 1% 0px 1%;*/
+  display: inline-block;
+  align-items: center;
+  align-content: center;
+
+}
+#button1{
+  align-self: center;
+  width: 80%;
+  height: 20px;
+  margin-top: 15px;
+  margin-bottom: 2px;
+
+  border-radius: 5px;
+  background: radial-gradient( #5283AB,#3374AC);
+}
+#button2{
+  align-self: center;
+  width: 80%;
+  height: 20px;
+  margin-top: 2px;
+  margin-bottom: 30px;
+
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, orange, yellow);
+}
+#buttonsBottom{
+    background-image: url("ad_background.png");
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+    padding: 5px;
+
+}
+#buttonsBottom p{
+  margin-top: 15px;
+}
+#theNinja{
+  margin-top: 15px;
+  width: 75px;
+
+}
+#buttonsBottom button{
+  align-self: center;
+  width: 80%;
+  height: 20px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, #7CD0DE, #0CC2DD);
+}
+#bodyright{
+  width:75%;
+  height: 600px;
+  padding: 5px 5px 5px 5px ;
+  margin-left: 23px;
+  margin-right: 0px;
+  display: inline-block;
+  /*background-color: green;*/
+  vertical-align: top;
+}

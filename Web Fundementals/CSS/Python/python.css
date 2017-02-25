@@ -1,27 +1,27 @@
 *{
- margin: 0px;
- padding: 0px;
- border: 0px;
- font-family: sans-serif;
- /*outline: 1px dashed red;*/
- color: inherit;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: sans-serif;
+  /*outline: 1px dashed red;*/
+  color: inherit;
 }
 
 .shadow{
-    box-shadow: 3px 3px 3px #1F1F1F;
+  box-shadow: 3px 3px 3px #1F1F1F;
 }
 #wrapper{
 
- width: 100%;
- background: black;
- /*background: linear-gradient(#265175, #3374AC);*/
- margin: auto;
- /*padding: 10px;*/
- position: relative;
- /*z-index: -2;*/
+  width: 100%;
+  background: black;
+  /*background: linear-gradient(#265175, #3374AC);*/
+  margin: auto;
+  /*padding: 10px;*/
+  position: relative;
+  /*z-index: -2;*/
 }
 #backer{
-   width: 950px;
+  width: 950px;
   background: linear-gradient(#265175, #3374AC);
   margin: auto;
   padding: 0px;
@@ -56,7 +56,7 @@
 
 
 
-  }
+}
 
 #TextSize{
   color: white;
@@ -84,12 +84,12 @@
 }
 
 #searchboxwrap{
-    /*display: inline-block;*/
-    background-color: #444444;
-    border: 10px solid #444444;
-    border-radius: 10px;
-    padding: 5px 10px 5px 10px;
-    margin: 5px 10px 5px 10px;
+  /*display: inline-block;*/
+  background-color: #444444;
+  border: 10px solid #444444;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  margin: 5px 10px 5px 10px;
 
 }
 #searchbox{
@@ -168,14 +168,14 @@
 }
 
 #listoflinks2{
- list-style-type: none;
- height: auto;
- width: auto;
- margin: auto;
- padding: 10px 10px 10px 10px;
- position: relative;
- display: inline-block;
- vertical-align: top;
+  list-style-type: none;
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
 }
 #descripAndMission{
   height: auto;
@@ -215,7 +215,7 @@
   height: 275px;
   width: inherit;
   margin: auto;
-display: inline-block;
+  display: inline-block;
   position: relative;
   text-align: center;
   color: black;
@@ -225,60 +225,62 @@ display: inline-block;
 }
 #BulletPoints p{
   text-align: justify;
-      -moz-text-align-last: center;
-      text-align-last: center;
-      padding: 7px 10px 10px 0px;
-      width: auto;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  padding: 7px 10px 10px 0px;
+  width: auto;
 
 }
 #BulletPoints div{
   border-top: 5px solid #75A8D3;
-    vertical-align: top;
+  vertical-align: top;
 
 }
 #BulletPoints h2{
   padding: 7px 0px 0px 0px;
-}#BulletPoints ul{
-  width: 80%;
-  margin-left: 10%;
-  color: #7AABD4;
-}
-#gettingstarted{
-  height: auto;
-  width: 400px;
-  display: inline-block;
-  margin: 10px 0px 0px 30px;
-  padding: 0px 0px 0px 0px;
+  }
 
-}
-#applicaitons{
-  height: auto;
-  width: 400px;
-  display: inline-block;
-  margin: 10px 0px 0px 30px;
-  padding: 0px 0px 0px 0px;
-}
-#Footer{
-  height: auto;
-  width: inherit;
-  margin: auto;
+  #BulletPoints ul{
+    width: 80%;
+    margin-left: 10%;
+    color: #7AABD4;
+  }
+  #gettingstarted{
+    height: auto;
+    width: 400px;
+    display: inline-block;
+    margin: 10px 0px 0px 30px;
+    padding: 0px 0px 0px 0px;
 
-  position: relative;
-  display: inline-block;
-  color: #89BAE3;
-}
-#Footer ul{
-  margin-top: 50px;
-  text-align: center;
-}
-#Footer li{
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  margin: 10px;
-  list-style-type: none;
+  }
+  #applicaitons{
+    height: auto;
+    width: 400px;
+    display: inline-block;
+    margin: 10px 0px 0px 30px;
+    padding: 0px 0px 0px 0px;
+  }
+  #Footer{
+    height: auto;
+    width: inherit;
+    margin: auto;
 
-}
-#copywrite{
-  text-align: center;
-}
+    position: relative;
+    display: inline-block;
+    color: #89BAE3;
+  }
+  #Footer ul{
+    margin-top: 50px;
+    text-align: center;
+  }
+  #Footer li{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    list-style-type: none;
+
+  }
+  #copywrite{
+    text-align: center;
+  }

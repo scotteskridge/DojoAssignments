@@ -3,18 +3,42 @@
   padding: 0px;
   border: 0px;
   font-family: sans-serif;
-  outline: 1px dashed red;
+  /*outline: 1px dashed red;*/
   color: inherit;
 }
-
+.center{
+  display: block;
+  margin: 0 auto;
+}
+.inline{
+  display: inline;
+}
 .shadow{
   box-shadow: 3px 3px 3px #1F1F1F;
 }
 .bluetext{
   color: #2C6A9F;
 }
+.largelightblue{
+  color: #04AEDA;
+  font-size: 35px;
+  font-weight: bold;
+
+}
+.smallgrey{
+  color: grey;
+  font-size: 15px;
+}
 .redtext{
   color: red;
+}
+.left-align {
+  margin-left: 0;
+  margin-right: auto;
+}
+.right-align {
+  margin-left: auto;
+  margin-right: 0;
 }
 #wrapper{
   width: 950px;
@@ -51,7 +75,7 @@
 }
 #bodyleft{
   width:20%;
-  height: 600px;
+  height: 800px;
   padding: 5px 5px 5px 5px ;
   /*margin: 0px 1% 0px 1%;*/
   display: inline-block;
@@ -66,6 +90,7 @@
   margin-top: 15px;
   margin-bottom: 2px;
 
+
   border-radius: 5px;
   background: radial-gradient( #5283AB,#3374AC);
 }
@@ -76,8 +101,12 @@
   margin-top: 2px;
   margin-bottom: 30px;
 
+
   border-radius: 5px;
   background: linear-gradient(to bottom right, orange, yellow);
+}
+#buttonsTop p{
+  margin: 10px 0px 0px 5px;
 }
 #buttonsBottom{
     background-image: url("ad_background.png");
@@ -108,11 +137,78 @@
 }
 #bodyright{
   width:75%;
-  height: 600px;
+  height: auto;
   padding: 5px 5px 5px 5px ;
   margin-left: 23px;
   margin-right: 0px;
   display: inline-block;
   /*background-color: green;*/
+  vertical-align: top;
+}
+#dns{
+  border-bottom: 5px solid grey;
+  height: 125px;
+
+}
+#homeicon{
+  vertical-align: top;
+}
+#dnstxt{
+  color: blue;
+  display: inline-block;
+  font-size: 30px;
+  vertical-align: top;
+}
+#phoneicon{
+  display: inline-block;
+  width: 50px;
+margin-top: 10px;
+margin-left: 325px;
+vertical-align: top;
+}
+#contactinfo{
+  display: inline-block;
+
+
+}
+#contactinfo ul{
+  width: 225px;
+  list-style: none;
+}
+#homeicon{
+  width: 30px;
+}
+#client_serverimg{
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+#clientserver ul, ol{
+  margin-left: 20px;
+
+}
+
+#clientserver *{
+  margin-top: 10px;
+
+}
+
+#big3{
+  width:90%;
+  height: 400px;
+  margin: 10px auto;
+  border: 5px solid #0085E0;
+
+
+
+}
+#big3txt{
+  display: inline-block;
+  vertical-align: top;
+  width: 450px;
+}
+#htmlimg{
+  width: 150px;
+  display: inline;
   vertical-align: top;
 }

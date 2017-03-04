@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ajax</title>
+  <meta name = "Ajax" content="Ajax">
+  <link rel="stylesheet" type="text/css" href="Ajax.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+
+  $(document).ready(function(){
+    $("#appendbtn").click(function(){
+      $("p").append("<img src=http://pokeapi.co/media/img/1.png>");
+    });
+
+    // for(var i=1; i<=151; i++){
+    //   $("div:last").append("<img src=http://pokeapi.co/media/img/"+i+".png>");
+    // }
+
+    $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+                   console.log(res);
+                   console.log(res.types[0].name);
+    console.log(res.types[1].name);
+                  }, "json");
+  });
+
+
+
+
+  </script>
+
+</head>
+
+
+
+<body>
+  <div id="bulbasaur">
+  </div>
+
+  <div id="loop">
+
+  </div>
+<img src="http://pokeapi.co/media/img/1.png">
+  <button id="appendbtn">Add elements</button>
+
+
+</body>
+
+</html>

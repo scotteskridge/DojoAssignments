@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery_Demo!</title>
+  <meta name = "jQuery_Demo" content="jQuery_Demo">
+  <link rel="stylesheet" type="text/css" href="Ninja_Puzzle.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".fadeout").click(function(){
+      $(this).fadeOut(400)
+    });
+    $(".restore").click(function(){
+      $(".fadeout").fadeIn(500);
+    })
+
+
+  }); //end of jquery
+  </script>
+
+</head> <!-- End of Head don't foget to update your meta-->
+
+<body>
+  <div class="wrapper">
+      <div class="body">
+    <img src="FunNinja.jpg" alt="flippenninja" class="card fadeout one fadeout">
+    <img src="FunNinja.jpg" alt="flippenninja" class="card fadeout two fadeout">
+    <img src="FunNinja.jpg" alt="flippenninja" class="card fadeout three fadeout">
+    <img src="FunNinja.jpg" alt="flippenninja" class="card fadeout four fadeout">
+    <img src="FunNinja.jpg" alt="flippenninja" class="card fadeout five fadeout">
+    <img src="full_of_win.jpg" alt="Winner!" class="win card restore">
+  </div>
+    <!-- <button class="restore">Restore</button>
+    <button class="swap">Change Effect</button> -->
+
+  </div>
+</body>
+
+
+</html>

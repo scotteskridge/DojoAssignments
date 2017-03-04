@@ -1,0 +1,52 @@
+*{
+  /*margin: 0px;*/
+  /*padding: 0px;*/
+  /*border: 0px;*/
+  /*font-family: monospace;*/
+  /*outline: 1px dashed red;*/
+  /*color: white;*/
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.red{
+  color: red;
+}
+.fadeout{
+
+}
+
+.opacityfade{
+  opacity: 0;
+
+}
+
+.card{
+  height:250px;
+  width: 250px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0, 0.9);
+  /*flex:1;*/
+  margin: 15px;
+}
+
+.wrapper{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(255,236,210, 0.8);
+  /*flex-direction: column;*/
+  margin: 0 auto;
+
+}
+.restore{
+  background-color: green;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0, 1);
+  height: 25px;
+  widows: 75px;
+  display: block;
+  margin: 15px;
+}
+
+.swap

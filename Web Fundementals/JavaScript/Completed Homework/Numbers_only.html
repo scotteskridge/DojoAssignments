@@ -1,0 +1,26 @@
+<html>
+
+<script>
+"use strict";
+
+var myArray = ([1, "apple", -3, "orange", 0.5,2,3,4,"dog"]);
+
+function NumbersOnly(arr){
+  var newArray = [];
+  for(var foo in arr){
+    if(typeof(arr[foo])=="number"){
+      newArray.push(arr[foo]);
+    }
+
+  }
+  return(newArray);
+
+}
+
+console.log(NumbersOnly(myArray));
+
+
+  </script>
+
+
+</html>

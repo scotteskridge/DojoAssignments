@@ -1,0 +1,42 @@
+<html>
+
+<script>
+"use strict";
+
+var myQuarters = prompt("How many quarters do you have?", 0 );
+
+function RndInt(min,max){
+  return Math.floor(Math.random() * (max - min + 1)+ min);
+}
+
+
+function quartergame(quarters){
+  var quarters = myQuarters
+  var win = 0;
+  var gamesplayed =0;
+  while (quarters>0){
+    win = RndInt(1,100);
+      if (win == 1){
+      quarters += RndInt(50,100);
+      console.log(quarters);
+      } else{
+      quarters--;
+      console.log(quarters);
+      }
+      if(quarters>500){
+        console.log("youwin");
+      }
+      gamesplayed++
+    } alert("You're out of quarters, but you played "+ gamesplayed+" times, good job");
+  }
+
+quartergame(myQuarters);
+
+
+
+
+
+</script>
+
+
+</html>

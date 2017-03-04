@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery_Demo!</title>
+  <meta name = "jQuery_Demo" content="jQuery_Demo">
+  <link rel="stylesheet" type="text/css" href="JqueyPractice.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('#clicked').click(function(){
+      alert('hello');
+    });
+    $('#hideMe').click(function(){
+      $(this).hide();
+    });
+    $('#brave').click(function(){
+      $("#hideMe").show();
+    });
+
+    $("#toggler").click(function() {
+      $("#toggletest1").toggle();
+    });
+
+    $("#slideup").click(function(){
+      $("p").slideUp();
+    });
+    $("#slidedown").click(function(){
+      $("p").slideDown();
+    });
+    $("#slidetoggle").click(function(){
+      $("p").slideToggle();
+    });
+    $("#fadein").click(function(){
+      $("p").fadeIn();
+      $("p").append("where am I?")
+    });
+    $("#fadeout").click(function(){
+      $("p").fadeOut(2000, "swing");
+    });
+    $("#red").click(function(){
+      $("p").removeClass("yellow");
+      $("p").addClass("red");
+      $("p").before("<p>OHNOS!</p>")
+      $("p").append("where am I?")
+    });
+    $("#yellow").click(function(){
+      $("p").removeClass("red");
+      $("p").addClass("yellow");
+      $("p").after("<p>OUCH!</p>")
+    });
+    $("#boom").click(function(){
+      $("p").html("<p>Hello world</p>");
+
+    });
+    $("img").hover(function(){
+      $("img").attr("width","50");
+
+    });
+    $("#text").click(function(){
+      $("p").text("go away");
+
+    });
+    testObj = new Object();
+        testObj.greetingMorn = "Good Morning!";
+        testObj.greetingEve = "Good Evening!";
+        $("#btn1").click(function(){
+            $("div").data(testObj);
+        });
+        $("#btn2").click(function(){
+            alert($("div").data("greetingEve"));
+        });
+
+
+
+  }); //end of jquery
+  </script>
+
+</head> <!-- End of Head don't foget to update your meta-->
+
+<body>
+  <p>Effects (functions to do some cool animation effects)
+    .hide()
+    .show()
+    .toggle()
+    .slideDown()
+    .slideToggle()
+    .slideUp()
+    .fadeOut()
+    .fadeIn()
+    CSS (adding or removing a class for any HTML element/DOM)
+    .addClass()
+    .removeClass()
+    .css()
+    Manipulation (retrieving or setting value or text in any HTML element)
+    .after()
+    .append()
+    .prepend()
+    .attr()
+    .before()
+    .html()
+    .text()
+    .val()
+    Events (functions to handle an event)
+    .click()
+    .on()
+    .live() - deprecated (JQuery 1.7)
+    .hover()</p>
+
+    <p id="clicked">I'm On click</p>
+    <p id="hideMe">I'm scared</p>
+    <p id="brave">I'll protect you</p>
+    <button id="toggler">I can be both</button>
+    <p id="toggletest1">I'm toggle test 1</p>
+    <p id="toggletest2">I'm toggle test 2</p>
+    <button id="slidedown">slide down</button>
+    <button id="slideup">slide up</button>
+    <button id="slidetoggle">I'm both</button>
+    <button id="fadein">sober up</button>
+    <button id="fadeout">I'm Faded</button>
+    <button id="red" class="red">RED!</button>
+    <button id="yellow">Yellow!</button>
+    <button id="boom">BOOM!</button>
+    <button id="text">Over Write</button>
+    <img src="ninja.png" alt="nope">
+    <div class="box"></div>
+    <button id="btn1">Attach data to div element</button><br>
+    <button id="btn2">Get data attached to div element</button>
+
+  </body>
+
+
+  </html>

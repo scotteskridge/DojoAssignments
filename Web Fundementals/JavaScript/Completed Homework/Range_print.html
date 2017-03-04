@@ -1,0 +1,37 @@
+<html>
+
+<script>
+"use strict";
+
+function printRange(start,end,step){
+  // console.log(start,end,step);
+  // console.log(typeof(start,end,step));
+  if(step === undefined || step === null){ //in case there is no step
+    step=1;
+  }
+  if(end==null){ //if there is only one arrguments
+    end=start;
+    start=0;
+  }
+  if(step>0 && end>start) { //make sure your counting up but not to infinity
+    for(var i = start; i<end;i += step ){
+      console.log(i);
+    }
+  }else if (step<0 && end < start){ //make sure your counting down
+    for(var i = start; i>end;i += step ){
+      console.log(i);
+    }
+  }else{
+      console.log("Invalid arrguments"); //throw error
+  }
+}
+
+  printRange(2, 10, 2);
+  printRange(4, -10, -2);
+  printRange(4, 8);
+  printRange(4);
+  printRange(4, 8, -3);
+  </script>
+
+
+</html>

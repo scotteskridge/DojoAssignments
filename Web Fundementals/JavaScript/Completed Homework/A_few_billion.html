@@ -1,0 +1,31 @@
+
+
+<script>
+var myMoney = 0.01;
+var report = false;
+
+
+function squaresAlot() {
+
+  for (var i=1 ;i<=30 ;i++) {
+    myMoney = myMoney*2;
+
+    if (myMoney >= 10000 && report != true){
+      alert("you made $"+myMoney + " in " + i + " days");
+      report = true;
+    }
+  }
+
+  return (myMoney);
+
+}
+
+squaresAlot();
+myMoney = myMoney.toLocaleString();
+// var myMoney = '$' + myMoney.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+// Aaron if you see this bit of commented out code can you help explain it to me?
+
+  console.log(myMoney);
+alert("At the end of 30 days you have $"+myMoney);
+
+</script> <!-- Can i have the time -->

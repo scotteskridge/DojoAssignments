@@ -1,0 +1,24 @@
+C:\Users\Scott Eskridge\Desktop>pip list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+click (6.7)
+Flask (0.12)
+itsdangerous (0.24)
+Jinja2 (2.9.5)
+MarkupSafe (0.23)
+numpy (1.12.0)
+pi (0.1.2)
+pip (9.0.1)
+setuptools (28.8.0)
+Werkzeug (0.11.15)
+
+C:\Users\Scott Eskridge\Desktop>pip freeze
+click==6.7
+Flask==0.12
+itsdangerous==0.24
+Jinja2==2.9.5
+MarkupSafe==0.23
+numpy==1.12.0
+pi==0.1.2
+Werkzeug==0.11.15
+
+C:\Users\Scott Eskridge\Desktop>

@@ -1,0 +1,26 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-color: black;
+}
+
+div.row div{
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  display: inline-block;
+
+}
+div.brick{
+  background-color: blue;
+}
+
+div .coin{
+  background-image: url('coin.gif');
+  background-size: contain;
+  border: none;
+  /*background-color: yellow;*/
+}

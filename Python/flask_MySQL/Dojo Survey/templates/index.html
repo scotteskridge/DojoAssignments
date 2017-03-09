@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <title>Index</title>
+</head>
+<body>
+  <div id="body">
+    <form action="/result" method = "post" >
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input type="text" placeholder="Enter your first name here"
+          name='name'>
+        </li>
+        <li>
+          <label for="Location">Dojo Location:</label>
+          <select name='location'>
+            <option value="Seattle">Seattle</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Texas">Texas</option>
+            <option value="France">France</option>
+          </select>
+        </li>
+        <li>
+          <label for="language">Favorite Language:</label>
+          <select name='language'>
+            <option value="python">Python</option>
+            <option value="javascript">JaveScript</option>
+            <option value="ruby">Ruby</option>
+            <option value="c#">c#</option>
+          </select>
+        </li>
+        <li>
+          <label for="message">Message:</label>
+          <textarea rows="6" id="message" placeholder="Enter your message here" name ='message'></textarea>
+        </li>
+      </ul>
+      <input type='submit' value='Submit'>
+    </form>
+
+    <a href="result">go to result</a>
+  </div>
+
+
+</body>
+</html>

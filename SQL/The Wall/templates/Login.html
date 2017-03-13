@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="loginwrapper">
+
+    <form id="login" action="confirmlogin" method="post">
+      <h1>Login</h1>
+      <ul class="flex-outer">
+
+           <li>
+             <label for="email">Email</label>
+             <input type="email" id="email" placeholder="Enter your email here">
+           </li>
+           <li>
+             <label for="password">Password</label>
+             <input type="password" id="password" placeholder="Enter your password here">
+           </li>
+           <li>
+             <button class="submit" type="submit">Submit</button>
+               <button class ="back"  href="/" name="/">Back</button>
+           </li>
+         </ul>
+
+    </form>
+
+  </div>
+</body>
+</html>

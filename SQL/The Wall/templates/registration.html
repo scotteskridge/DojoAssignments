@@ -8,38 +8,45 @@
 <body>
   <div class="loginwrapper">
 
-    <form id="login" action="confirmregistration" method="post">
+    <form id="login" action="/confirmregistration" method="POST">
       <h1>Registration</h1>
       <ul class="flex-outer">
            <li>
-             <label for="first-name">First Name</label>
-             <input type="text" id="first-name" placeholder="Enter your first name here">
+             <label for="first_name">First Name:</label>
+             <input type="text" id="first_name" name="first_name" min="2" placeholder="Enter your first name here">
            </li>
            <li>
-             <label for="last-name">Last Name</label>
-             <input type="text" id="last-name" placeholder="Enter your last name here">
+             <label for="last_name">Last Name:</label>
+             <input type="text" id="last_name" name="last_name" placeholder="Enter your last name here">
            </li>
            <li>
-             <label for="email">Email</label>
-             <input type="email" id="email" placeholder="Enter your email here">
+             <label for="email">Email:</label>
+             <input type="email" id="email" name = "email" placeholder="Enter your email here">
            </li>
            <li>
-             <label for="phone">Phone</label>
-             <input type="tel" id="phone" placeholder="Enter your phone here">
+             <label for="pw">Password:</label>
+             <input type="pw" id="pw" name ="pw" placeholder="Enter your password here">
            </li>
            <li>
-             <label for="message">Message</label>
-             <textarea rows="6" id="message" placeholder="Enter your message here"></textarea>
+             <label for="message">Confirm:</label>
+             <input  id="pwconfirm" name="pwconfirm" placeholder="Confirm your password here"></textarea>
            </li>
 
            <li>
              <button class="submit" type="submit">Submit</button>
-               <button class ="back" type="submit">Back</button>
+            <!-- <button class ="back" type="submit" value="Back">Back</button> -->
+            <a href="/" class="back">Back</a>
            </li>
          </ul>
 
     </form>
-
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p >{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
   </div>
 </body>
 </html>

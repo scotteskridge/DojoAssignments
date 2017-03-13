@@ -1,6 +1,7 @@
 *{
   padding: 0px;
   margin: 0px;
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
 }
 
 
@@ -114,7 +115,7 @@ body {
   border: none;
 }
 
-.flex-outer li button {
+.flex-outer li button, a {
   margin-left: auto;
   padding: 10px 16px;
   border: none;
@@ -139,7 +140,9 @@ body {
   width: 100%;
   background-color: rgba(231,76,60 ,1);
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.8);
-  margin-top: 15px;
+  margin: 15px 0px;
+  text-align: center;
+  text-decoration: none;;
 }
 
 .main{

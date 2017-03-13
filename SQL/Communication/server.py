@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, session, flash, url_for, escape, request
+import re
 from mysqlconnection import MySQLConnector
 
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 app = Flask(__name__)
 app.secret_key = 'scott1'
 # import the Connector function
@@ -14,27 +16,35 @@ mysql = MySQLConnector(app, 'friends')
 @app.route('/')
 def index():
     friends = mysql.query_db("SELECT * FROM friends")
-
-    return render_template('index.html', all_friends=friends)
+    
+    if 'emailmessage' not in session:
+        session['emailmessage'] = 'normal'
+    return render_template('index.html', all_friends=friends, emailmessage = session['emailmessage'])
 
 @app.route('/friends', methods=['POST'])
 def create():
+
+    emailmessage =session['emailmessage']
+    print emailmessage
     if len(request.form['email']) < 1:
-        flash("email cannot be empty!") # just pass a string to the flash function
+        flash("Email cannot be blank!")
+    elif not EMAIL_REGEX.match(request.form['email']):
+        flash("Invalid Email Address!")
     else:
-        flash("Success! Your email is {}".format(request.form['email'])) # just pass a string to the flash function
-      # Write query as a string. Notice how we have multiple values
-    # we want to insert into our query.
-    query = "INSERT INTO friends (first_name, last_name, occupation, email, created_at, updated_at) VALUES (:first_name, :last_name, :occupation, email, NOW(), NOW())"
-    # We'll then create a dictionary of data from the POST data received.
-    data = {
-             'first_name': request.form['first_name'],
-             'last_name':  request.form['last_name'],
-             'occupation': request.form['occupation'],
-             'email': request.form['email']
-           }
-    # Run query, with dictionary values injected into the query.
-    mysql.query_db(query, data)
+        flash(" Success! Your email is{}".format(request.form['email'])) # just pass a string to the flash function
+        session['emailmessage'] = 'green'
+        # Write query as a string. Notice how we have multiple values
+        # we want to insert into our query.
+        query = "INSERT INTO friends (first_name, last_name, occupation, email, created_at, updated_at) VALUES (:first_name, :last_name, :occupation, :email, NOW(), NOW())"
+        # We'll then create a dictionary of data from the POST data received.
+        data = {
+        'first_name': request.form['first_name'],
+        'last_name':  request.form['last_name'],
+        'occupation': request.form['occupation'],
+         'email': request.form['email']}
+        # Run query, with dictionary values injected into the query.
+        mysql.query_db(query, data)
+
     return redirect('/')
 
 @app.route('/friends/<friend_id>')
@@ -55,12 +65,11 @@ def show(friend_id):
 def update(friend_id):
     query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation, email = :email, WHERE id = :id"
     data = {
-             'first_name': request.form['first_name'],
-             'last_name':  request.form['last_name'],
-             'occupation': request.form['occupation'],
-             'email': request.form['email'],
-             'id': friend_id
-           }
+        'first_name': request.form['first_name'],
+        'last_name':  request.form['last_name'],
+        'occupation': request.form['occupation'],
+        'email': request.form['email'],
+        'id': friend_id}
     mysql.query_db(query, data)
     return redirect('/')
 

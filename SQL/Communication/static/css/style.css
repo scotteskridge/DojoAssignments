@@ -2,3 +2,13 @@
   padding: 0px;
   margin: 0px;
 }
+
+.green{
+  color: white;
+  background-color: green;
+}
+
+.normal{
+  background-color: grey;
+  color: red;
+}

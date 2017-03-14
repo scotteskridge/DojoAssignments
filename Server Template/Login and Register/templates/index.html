@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <title>The Wall</title>
+</head>
+<body>
+  <!-- <img src="{{ url_for('static', filename='seattlehdr.jpg') }}" alt=""> -->
+  <div class="header">
+    <h3>CodingDojo Wall</h3>
+    <a href="/login">Login</a>
+    <p>|</p>
+    <a href="/registration">Register</a>
+    <p>Welcome {{user}}</p>
+    <a href="logout">Log Out</a>
+  </div>
+
+  <div class="main">
+    <form class="messagebox" action="postcomment" method="post">
+      <h1>Post a New Message:</h1>
+      <textarea rows="5" id="message" placeholder="Enter your message here"></textarea>
+      <button class="submit" type="submit">Submit</button>
+    </form>
+
+    <div class="messagedisplay">
+      <h3>Author of the message  - the time it was posted</h3>
+      <p>Put your lorum ipusm message here, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h3>Here are some comments   - the time it was posted</h3>
+      <p>Put your lorum ipusm message here, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <br>
+      <form class="messagebox" action="postmessage" method="post">
+        <h4>Post a New comment:</h4>
+        <textarea rows="2" id="message" placeholder="Enter your comment"></textarea>
+        <button class="submit" type="submit">Submit</button>
+      </form>
+    </div>
+
+
+  </div>
+
+
+</body>
+</html>

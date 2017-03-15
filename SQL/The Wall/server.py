@@ -170,6 +170,13 @@ def confirmlogin():
 
 @app.route('/postmessage', methods=["POST"])
 def postmessage():
+    # print request.form
+    query = "INSERT INTO messages (users_id, message, created_at, updated_at) VALUES (:session_user_id, :form_message, NOW(), NOW())"
+    data = {
+        "session_user_id": session["userid"],
+        "form_message" : request.form['message']
+    }
+    mysql.query_db(query,data)
     return redirect('/')
 
 @app.route('/postcomment', methods=["POST"])

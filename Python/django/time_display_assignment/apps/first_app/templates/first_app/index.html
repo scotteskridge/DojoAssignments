@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+    {% load staticfiles %}
+      <!-- The line above tells Django to be ready to listen for static files -->
+      <link rel="stylesheet" href="{% static 'first_app/css/main.css' %}"media="screen" title="no title"  charset="utf-8">
+  </head>
+  <body>
+    <h1>Index.html Yeah!</h1>
+    <h3>{{time}}</h3>
+    <h3>{{date}}</h3>
+
+    <p>heres the other way</p>
+    {% now "SHORT_DATETIME_FORMAT"%}
+    <a href="users">Users</a>
+  </body>
+</html>

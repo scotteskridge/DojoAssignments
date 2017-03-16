@@ -9,13 +9,19 @@
     <p>Random Word (attempt #{{count}})</p>
     <p>{{randomWord}}</p>
     <p>Enter a length for your random word</p>
+    {{request.session.wordlength}}
     <form class="newword" action="newword" method="post">
 
        {% csrf_token %}
-       <input type="text" name="first_name">
+       <input type="text" name="length">
 
 
       <input type="submit" name="newword" value="Generate">
+    </form>
+
+    <form class="clear" action="clear" method="post">
+        {% csrf_token %}
+      <input type="submit" name="newword" value="Clear">
     </form>
   </body>
 </html>

@@ -4,27 +4,34 @@ import string
 
 # Create your views here.
 def index(request):
-    print "*"*90
-    print "did i get to the index?"
-    print "*"*90
-    count = 0
-    #''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(20)])
+    print ("*"*90)
+    print ("did i get to the index?")
+    print ("*"*90)
+
     return render(request, "word_gen\index.html")
 
 def newword(request):
+
     if request.method == "POST":
-        print "*"*90
-        print "did i get to the newword maker?"
-        print "*"*90
-        randomWord = ''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(20)])
-        if "count" not in context:
-            count=0
-        count += 1
+        request.session['wordlength'] = request.POST['length']
+        if "count" not in request.session:
+            request.session["count"] = 0
+            print("you didn't have a count now it is:")
+
+        else:
+            request.session["count"] += 1
+            print("you now have a count and it is:" )
+        if not request.session['wordlength']:
+            request.session['wordlength'] = 1
+
+        randomWord = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(int(request.session['wordlength']) )])
+
         context ={"randomWord" : randomWord,
-                    "count" : count}
-        print context
+                "count" : request.session["count"]}
         return render(request, "word_gen\index.html", context)
     else:
         return redirect("/")
-    #''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(20)])
-    #return redirect(request, "word_gen\index.html")
+
+def clear(request):
+    request.session.clear()
+    return redirect("/")

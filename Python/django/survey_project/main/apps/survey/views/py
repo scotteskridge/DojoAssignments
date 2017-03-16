@@ -1,0 +1,11 @@
+from django.shortcuts import render, HttpResponse, redirect
+import random
+import string
+
+# Create your views here.
+def index(request):
+    print ("*"*90)
+    print ("did i get to the index?")
+    print ("*"*90)
+
+    return render(request, "survey\index.html")

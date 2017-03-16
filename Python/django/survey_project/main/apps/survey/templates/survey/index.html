@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Survey Main Page</title>
+</head>
+
+<body>
+  
+  <div class="">
+    <form class="" action="process" method="post">
+      {% csrf_token %}
+      <ul>
+        <li>
+          <label for="UserName">Your Name</label>
+          <input type="text" name="UserName" value="Your Name">
+        </li>
+        <li>
+          <label for="">Dojo Location</label>
+          <select class="" name="DojoLocation">
+            <option value="Seattle">Seattle</option>
+            <option value="MountainVeiw">Mountain Veiw</option>
+            <option value="California">California</option>
+
+          </select>
+        </li>
+        <li>
+          <label for="">Favorite Language</label>
+          <select class="" name="FavoriteLanguage">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+
+          </select>
+        </li>
+        <li>
+          <label for="">Comment (Optional)</label>
+          <br>
+          <textarea name='comment' id='comment'></textarea>
+        </li>
+        <li>
+          <input type="submit" name="submit" value="submit">
+        </li>
+      </ul>
+
+    </form>
+
+  </div>
+</body>
+</html>

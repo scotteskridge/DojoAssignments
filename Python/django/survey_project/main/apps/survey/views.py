@@ -20,10 +20,7 @@ def process(request):
             print ("*"*90)
             print ("you made a count")
             request.session["count"] = 0
-        else:
-            print ("*"*90)
-            print ("you incremented a count")
-            request.session["count"] += 1
+        request.session["count"] += 1
         request.session["UserName"] = request.POST["UserName"]
         request.session["DojoLocation"] = request.POST["DojoLocation"]
         request.session["FavoriteLanguage"] = request.POST["FavoriteLanguage"]

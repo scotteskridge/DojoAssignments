@@ -1,4 +1,4 @@
-"""courses_project URL Configuration
+"""courses URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -17,5 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r"^", include("apps.course_crud.urls")),
+    url(r'^admin/', admin.site.urls),
+    url(r"^", include("apps.add_course.urls", namespace='add_course'))
 ]

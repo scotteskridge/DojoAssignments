@@ -27,7 +27,7 @@ cd %app_name%
 null> index.html
 cd..
 cd..
-null> ulrs.py
+null> urls.py
 
 echo "success"
 echo "created " %project% "and " %app_name%

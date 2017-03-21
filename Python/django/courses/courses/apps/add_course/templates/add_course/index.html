@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Add a new course</h1>
+    <form class="" action="create" method="post">
+      {% csrf_token %}
+      <label for="title">Name:</label> <input type="text" name="title" value="title">
+      <label for="description">Description:</label><input type="text" name="description" value="description">
+      <input type="submit" name="Submit" value="Submit">
+    </form>
+
+    <h1>Courses</h1>
+    <table>
+    <tr>
+    <th>Course Title</th>
+    <th>Description</th>
+    <th>Date Added</th>
+    <th>Action</th>
+    </tr>
+  <!--Ok so now I need to pass back my course id liekly with a P?<id> regex  -->
+  <!--if I can't get the atag to pass back the id I might have to use a form?  -->
+  {% for course in courses%}
+  <tr>
+  <td>{{course.title}}</td>
+  <td>{{course.description}}</td>
+  <td>{{course.created_at}}</td>
+  <td> <a href="destroy/{{course.id}}">{{course.id}}</a></td>
+  </tr>
+  {%endfor %}
+  </tr>
+  </table>
+
+
+  </body>
+</html>

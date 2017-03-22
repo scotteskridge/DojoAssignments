@@ -10,3 +10,8 @@ server {
       proxy_pass http://unix:/home/ubuntu/Belt_Exam/Belt_Exam.sock;
   }
 }
+
+
+sudo ln -s /etc/nginx/sites-available/Belt_Exam /etc/nginx/sites-enabled
+
+34.208.129.107

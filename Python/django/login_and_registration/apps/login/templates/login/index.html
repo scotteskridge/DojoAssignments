@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<!-- ok so we need to have an index to route to either login or register
+    the index needs to have a form for email and pass word and a link to register and display a message to welcome user
+
+    a register page if not correct or need to register
+
+    the login form can be on index
+
+    then have a success page if its correct
+
+    a logout button can also be on the index page-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+  </head>
+  <body>
+    <h1>Welcome to the login page (put users name here and don't forget to stor user ID as a session variable)</h1>
+  <!-- display some error messages here -->
+  {% for error in messages%}
+    <p>{{error}}</p>
+  {%endfor%}
+
+    <!--  so first offer the chance to login -->
+    <h4>Please login:</h4>
+    <form class="" action="{% url 'login:login' %}" method="post">
+       {% csrf_token %}
+      <input type="email" name="email" value="Your@email.com">
+      <input type="password" name="password" value="password">
+      <input type="submit" name="submit" value="submit">
+    </form>
+    <!-- next offer the chance to register and don't forget this is in the form of % url appname:route with quotes outside the braces and around the "appname:route "-->
+    <a href="{% url 'login:register' %}">Register</a>
+    <!-- last offer a chance to logout concider logic to hide this if session.id exists -->
+    <a href="{% url 'login:logout' %}">Logout</a>
+  </body>
+</html>

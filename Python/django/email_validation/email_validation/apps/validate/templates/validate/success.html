@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Success</h1>
+    <p>your email address is {{email}}</p>
+
+    <!-- throw some python code in here to show all emai laddress from the database -->
+
+    <h1>Emails</h1>
+    <table>
+    <tr>
+    <th>Email</th>
+    <th>Time Added</th>
+
+    </tr>
+  <!--Ok so now I need to pass back my course id liekly with a P?<id> regex  -->
+  <!--if I can't get the atag to pass back the id I might have to use a form?  -->
+  {% for email in emails%}
+  <tr>
+  <td>{{email.email}}</td>
+  <td>{{email.created_at}}</td>
+
+  </tr>
+  {%endfor %}
+  </tr>
+  </table>
+
+    <a href="{% url 'email_validation:index' %}">Go Back</a>
+  </body>
+</html>

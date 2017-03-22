@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Email is not valid (put some logic here to change the text likely a context variable?)</h1>
+    <form class="" action= "{% url 'email_validation:validate' %}" method="post">
+      {% csrf_token%}
+      <input type="text" name="email" value="email">
+      <input type="submit" name="{% url 'email_validation:validate' %}" value="submit">
+    </form>
+    <a href="{% url 'email_validation:index' %}">Go Back</a>
+
+  </body>
+</html>

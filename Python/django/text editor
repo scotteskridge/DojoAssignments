@@ -1,0 +1,12 @@
+server {
+  listen 80;
+  server_name 35.165.20.64;
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+      root /home/ubuntu/Belt_Exam;
+  }
+  location / {
+      include proxy_params;
+      proxy_pass http://unix:/home/ubuntu/Belt_Exam/Belt_Exam.sock;
+  }
+}

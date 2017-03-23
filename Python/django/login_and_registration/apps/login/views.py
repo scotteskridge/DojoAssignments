@@ -10,7 +10,10 @@ def index(request):
 
 def login(request):
 
+
     responce_from_model = User.objects.login(request.POST)
+    print('8'*80)
+    print("get a responce?")
 
     #ok so I might be trying to get to fancy but... if post data is being passed in I want to process the login if not I want to render the login page and display errors
 

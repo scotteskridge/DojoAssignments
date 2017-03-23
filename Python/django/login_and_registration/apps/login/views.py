@@ -10,23 +10,67 @@ def index(request):
 
 def login(request):
 
+    responce_from_model = User.objects.login(request.POST)
 
-        # dont forget to save the user_id in session
-    return redirect("/")
+    #ok so I might be trying to get to fancy but... if post data is being passed in I want to process the login if not I want to render the login page and display errors
+
+    if responce_from_model["status"]:
+
+            #if the responce is true we know we registered a user so
+        request.session["user_id"] = responce_from_model["user"].id
+        request.session["first_name"] = responce_from_model["user"].first_name
+                #save the user id in session
+                #and redirect to the succes page
+
+        return redirect("login:success")
+        #else
+    else:
+        for error in responce_from_model["errors"]:
+            messages.error(request, error)
+                #send the errors to the client
+                #redirect back to the try again but remeber to provide a back button
+        return render(request, "login/login.html")
+    return render(request, "login/login.html")
 
 def register(request):
+    #I want a seperate signup page that will route to the register route
+    #the template will show the error message from register but this is just a landing route
 
 
         # dont forget to save the user_id in session
-    return redirect("/")
+    return render(request, "login/register.html")
+
+def submit_register(request):
+        #invoke the method from the models and captue the responce_from_model
+        responce_from_model = User.objects.register_user(request.POST)
+        #check if responce is true
+        if responce_from_model["status"]:
+            #if the responce is true we know we registered a user so
+            request.session["user_id"] = responce_from_model["user"].id
+            request.session["first_name"] = responce_from_model["user"].first_name
+                #save the user id in session
+                #and redirect to the succes page
+
+            return redirect("login:success")
+        #else
+        else:
+            for error in responce_from_model["errors"]:
+                messages.error(request, error)
+                #send the errors to the client
+                #redirect back to the try again but remeber to provide a back button
+            return redirect("login:register")
+
+        #use messages and not a context
+
+        # dont forget to save the user_id in session
+
 
 def success(request):
+
     # don't forget to filter to ensure that there is a user_id in sessions
     if not "user_id" in request.session:
         messages.error(request, "Must be logged in to continue")
-        return redirect("login:index")
-
-
+        return redirect("/")
     return render(request, "login/success.html")
 
 def logout(request):

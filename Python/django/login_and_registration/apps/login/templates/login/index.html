@@ -14,15 +14,20 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'login/css/style.css' %}"media="screen" title="no title"  charset="utf-8">
   </head>
   <body>
-    <h1>Welcome to the login page (put users name here and don't forget to stor user ID as a session variable)</h1>
+    <h1>Welcome to the login page {{request.session.first_name}} , your User ID is {{request.session.user_id}}</h1>
   <!-- display some error messages here -->
+  {% if messages %}
   {% for error in messages%}
     <p>{{error}}</p>
   {%endfor%}
+  {% endif %}
 
     <!--  so first offer the chance to login -->
+    {% if not request.session.user_id %}
     <h4>Please login:</h4>
     <form class="" action="{% url 'login:login' %}" method="post">
        {% csrf_token %}
@@ -32,6 +37,7 @@
     </form>
     <!-- next offer the chance to register and don't forget this is in the form of % url appname:route with quotes outside the braces and around the "appname:route "-->
     <a href="{% url 'login:register' %}">Register</a>
+    {% endif %}
     <!-- last offer a chance to logout concider logic to hide this if session.id exists -->
     <a href="{% url 'login:logout' %}">Logout</a>
   </body>

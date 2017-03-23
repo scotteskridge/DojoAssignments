@@ -5,6 +5,14 @@ from .models import User
 # Create your views here.
 
 def index(request):
+    # if you want to force the user to login before taking any othere actions then
+    # use the following code:
+    ########################################################
+    # if not "user_id" in request.session:
+    #     messages.error(request, "Must be logged in to continue")
+    #     return render(request, "login/login.html")
+    ##########################################################
+    #this will reroute them to the login page if there is not a user id in session
 
     return render(request, "login/index.html")
 

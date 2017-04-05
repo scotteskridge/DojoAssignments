@@ -2,7 +2,7 @@ using System;
 
 namespace ConsoleApplication{
 
-    public class Human{
+    public class Human:GameObject{
         public string name;
         public int strength;
         public int intelligence;

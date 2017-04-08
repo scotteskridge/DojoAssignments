@@ -16,6 +16,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/bin
+/obj
+*.lock
+*.pyc
+venv/
+*.zip
 
 # =========================
 # Operating System Files

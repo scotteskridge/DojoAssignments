@@ -6,11 +6,14 @@ namespace MVCtemplate{
     public class Startup{
         public void ConfigureServices(IServiceCollection services){
             // Add Mvc as a service making it available across our entire app
+            services.AddSession();
             services.AddMvc();
         }
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory){
             loggerFactory.AddConsole();
             app.UseDeveloperExceptionPage();
+            app.UseSession();
+            // app.UseStaticFiles();
             // Other middleware
             app.UseMvc();
             

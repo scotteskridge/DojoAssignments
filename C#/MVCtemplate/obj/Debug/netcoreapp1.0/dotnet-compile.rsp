@@ -1,5 +1,5 @@
---temp-output:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\obj\Debug\netcoreapp1.0\
---out:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\bin\Debug\netcoreapp1.0\Time Display.dll
+--temp-output:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\MVCtemplate\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\MVCtemplate\bin\Debug\netcoreapp1.0\MVCtemplate.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -8,7 +8,7 @@
 --suppress-warning:CS1705
 --optimize:False
 --emit-entry-point:True
---output-name:Time Display
+--output-name:MVCtemplate
 --file-version:1.0.0.0
 --version:1.0.0.0
 --informational-version:1.0.0
@@ -162,7 +162,7 @@
 --reference:C:\Users\Scott Eskridge\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\obj\Debug\netcoreapp1.0\Time Displaydotnet-compile.deps.json",Time Display.deps.json
-C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\Program.cs
-C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\Startup.cs
-C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\Controllers\MainAppController.cs
+--resource:"C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\MVCtemplate\obj\Debug\netcoreapp1.0\MVCtemplatedotnet-compile.deps.json",MVCtemplate.deps.json
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\MVCtemplate\Program.cs
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\MVCtemplate\Startup.cs
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\MVCtemplate\Controllers\MainAppController.cs

@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#PassGen").click(function(){
+                $.get("/Random_Password", {Password_Length : $("#Password_Length").val() }, function(result){
+                    console.log(result);
+                    $("#GeneratedPassword").text(result);
+                });
+          });
+
+            $("body").on("submit", "#jsontest", function(){
+                event.preventDefault();
+                $.post("/Form_Data", {First_Name : $("#First_Name").val(), 
+                                      Last_Name : $("#Last_Name").val(), 
+                                      Age : $("#Age").val(),  }, function(result) {
+                    console.log(result.first_Name);
+                    $("#jsonResponce").text("Your name is" + result.First_Name +" " + result.Last_Name + " " + result.age);
+                });
+                return false;
+            });
+           
+
+
+        });
+    </script> 
+</head>
+<body>
+    <h1> Your random passcode is: </h1>
+    <p id = "GeneratedPassword"> Password will go here </p>
+    
+   
+    <form >
+        <input id = "Password_Length" class = "Password_Length" type ="number" name = "Password_Length">
+        <button id = "PassGen" > GenPass </button>
+
+    </form>
+    <form method = "POST" action = "Clear_Password">
+        <input type="submit" value= "Clear" name="Clear">
+
+    </form>
+    <h2>Json Responce testing</h2>
+     <form id = "jsontest">
+        <input type ="number" name = "Age">
+        <input type ="text" name = "First_Name">
+        <input type ="text" name = "Last_Name">
+        <!--Leave room to do form datetime-->
+        <input type="submit" value= "submit" name="submit">
+       
+
+        <p> </p>
+        <p id="jsonResponce"> Json form data will go here </p>
+    </form>
+
+
+    </body>
+</html>

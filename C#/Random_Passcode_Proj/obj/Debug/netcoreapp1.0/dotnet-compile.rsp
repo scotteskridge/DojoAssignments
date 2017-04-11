@@ -1,5 +1,5 @@
---temp-output:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\obj\Debug\netcoreapp1.0\
---out:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\bin\Debug\netcoreapp1.0\Time Display.dll
+--temp-output:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\bin\Debug\netcoreapp1.0\Random_Passcode_Proj.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -8,7 +8,7 @@
 --suppress-warning:CS1705
 --optimize:False
 --emit-entry-point:True
---output-name:Time Display
+--output-name:Random_Passcode_Proj
 --file-version:1.0.0.0
 --version:1.0.0.0
 --informational-version:1.0.0
@@ -48,6 +48,7 @@
 --reference:C:\Users\Scott Eskridge\.nuget\packages\Microsoft.AspNetCore.Routing\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Routing.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\Microsoft.AspNetCore.Routing.Abstractions\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Routing.Abstractions.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\Microsoft.AspNetCore.Server.Kestrel\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Server.Kestrel.dll
+--reference:C:\Users\Scott Eskridge\.nuget\packages\Microsoft.AspNetCore.Session\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Session.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\Microsoft.AspNetCore.WebUtilities\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.WebUtilities.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\Microsoft.CodeAnalysis.Common\1.3.0\lib\netstandard1.3\Microsoft.CodeAnalysis.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\Microsoft.CodeAnalysis.CSharp\1.3.0\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll
@@ -162,7 +163,9 @@
 --reference:C:\Users\Scott Eskridge\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Scott Eskridge\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\obj\Debug\netcoreapp1.0\Time Displaydotnet-compile.deps.json",Time Display.deps.json
-C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\Program.cs
-C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\Startup.cs
-C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Time Display\Controllers\MainAppController.cs
+--resource:"C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\obj\Debug\netcoreapp1.0\Random_Passcode_Projdotnet-compile.deps.json",Random_Passcode_Proj.deps.json
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\Program.cs
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\Startup.cs
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\Controllers\Login.cs
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\Controllers\MainAppController.cs
+C:\Users\Scott Eskridge\Desktop\DojoAssignments\C#\Random_Passcode_Proj\Utils\KeyGenerator.cs

@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model CommentWall.Models.User
+
+<h1>Login Main page</h1>
+<p>Get to adding stuff</p>
+<a asp-controller="Users" asp-action="Success">Success</a>
+<a asp-controller="Home" asp-action="Dashboard">Go to dashboard</a>
+
+<div asp-validation-summary="All"></div>
+@{
+    if (@ViewBag.errors != null){   
+        <p>@ViewBag.errors</p>
+    }
+}
+
+<h3>Register New User:</h3>
+<form asp-controller="Users" asp-action="Register" method ="post">
+    <ul>
+        <li>First Name:         <input type="text" asp-for= "first_name"><l/i>
+        <li>Last Name:          <input type="text" asp-for= "last_name"></li>
+        <li>Email:              <input type="email" asp-for=  "email"></li>
+        <li>Password:           <input type="password" asp-for=  "pw" value = "password"></li>
+        <li>Confirm Password:   <input type="password" asp-for=  "pw_confirm" value = "password"></li>
+    </ul>
+     <input type="submit" value = "Register" class = "btn btn-info">
+</form>
+
+<h3>Login:</h3>
+<form asp-controller="Users" asp-action="Login" method ="post">
+    <ul>
+        <li>Email:    <input type="email" asp-for= "email"></li>
+        <li>Password: <input type="password" asp-for= "pw" value = "password"></li>
+    </ul>
+     <input type="submit" value="Login" class = "btn btn-success">
+</form>

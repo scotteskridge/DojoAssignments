@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<p> Throw some ajax up here for posting messages and comments</p>
+
+
+<h1>CodingDojo Wall</h1>
+<p>Welcome ((User)) it is ((time now))</p>
+<a asp-controller="Users" asp-action="Logout"> Log Off</a>
+<a href="/PageTwo"> Page Two</a>
+
+
+<h3>Post a Message </h3>
+<form action="">
+    <textarea rows = "3" cols = "80"></textarea>
+    <input type="Button" Name = "message" Value = "Post a Message">
+</form>
+
+
+
+
+<h3>For each message in message:((User that posted)) - ((Date.Time posted)) </h3>
+<p>lorem ipsum message </p>
+<h4>for each comment in comments on that message: ((User that posted)) - ((Date.Time posted))</h4>
+<p>lorem ipsem commens</p>
+<h3>Post a Comment </h3>
+<form action="">
+    <textarea rows = "2" cols = "80"></textarea>
+    <input type="Button" Name = "comment" Value = "Post a Comment">
+</form>

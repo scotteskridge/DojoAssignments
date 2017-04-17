@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace EFWalll
+namespace dapperwedding
 {
     public class Program
     {

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="dominion.css">
   <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
   <script type="text/javascript" src = "cards.js"></script>
   <script type="text/javascript" src = "DeckClass.js"></script>
   <script type="text/javascript" src = "PlayerClass.js"></script>
-
+  <script type="text/javascript" src = "Initialize.js"></script>
   <script type="text/javascript" src = "game.js"></script>
-  <link rel="stylesheet" type="text/css" href="dominion.css">
+
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -26,16 +27,19 @@
 
     <br>
     <br>
-    <div class="pile click" >
-      <ul class = "card">
-        <li>Name: Copper</li>
-        <li>Cost: 1</li>
-        <li>Victory Points : 0</li>
-        <li>Type: Treasure</li>
-        <li>Description: A copper gives 1 coin</li>
-      </ul>
+    <div class="game_board click" >
+      <div class="treasure">
+
+      </div>
+      <div class="victory">
+
+      </div>
+      <div class="action">
+        actions
+      </div>
+
     </div>
-    <p class = "coppers">10</p>
+
 
 
     <div id="player_state">
@@ -64,7 +68,7 @@
         </div>
 
         <div class="player_hand">
-          player_hand
+
         </div>
         <div class="draw_deck card">
           draw_deck

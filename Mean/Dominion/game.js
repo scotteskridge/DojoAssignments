@@ -1,29 +1,35 @@
 // finish getting the game state setup with a player haveing 10 cards and be abel to display and draw those cards to hand
 var game_over = false
-var game_start = true
+var initialize = false
 
 
 
 var players = []
-var current_player = 0
+var player_num = 0
+var current_player;
+var num_of_players = 0
 var phase = ["Action" , "Buy" , "Cleanup"]
 var current_phase = 0
 
 if (!game_over){
   console.log("Game Over the winner is Scott")
 }
+
 function next_player(){
-  current_player +=1
-  if (current_player == players.length){
-    current_player = 0
+  player_num +=1
+  if (player_num == players.length){
+    player_num = 0
   }
-  $('#current_player').html(players[current_player].name)
-  $('#deck_count').html(players[current_player].deck.length)
-  $('#discard_count').html(players[current_player].discard.length)
-  $('#actions').html(players[current_player].actions)
-  $('#buys').html(players[current_player].buys)
-  $('#coins').html(players[current_player].coins)
-  return current_player
+  $('#current_player').html(current_player.name)
+  $('#deck_count').html(current_player.deck.length)
+  $('#discard_count').html(current_player.discard.length)
+  $('#actions').html(current_player.actions)
+  $('#buys').html(current_player.buys)
+  $('#coins').html(current_player.coins)
+  current_player = players[player_num]
+  current_player.draw_hand()
+  current_player.display_hand()
+  return player_num
 }
 
 function next_phase(){
@@ -35,30 +41,66 @@ function next_phase(){
 }
 
 function update_score(){
-
+  for (var player of players){
+    player.tally_score()
+    var list_item = (`<li>${player.name}'s score: ${player.score}</li>`)
+    $('#score_board').append(list_item)
+  }
 }
 
 
+
+
+
+
+
+
+
 $(document).ready(function(){
-  //start game loop if game start is true
-  if (game_start){
-    var num_players = prompt("Please enter the number of new players:")
-    for (var i = 0; i < num_players; i++){
+  build_board()
+
+  //initialize the game state
+  if (initialize){
+    //create new players on game start
+    num_of_players = prompt("Please enter the number of new players:")
+    for (var i = 0; i < num_of_players; i++){
       var name = prompt("Please enter the players name:")
       var player = new Player(name)
       players.push(player)
     }
-    $('#current_player').html(players[current_player].name)
+    //populate the html
+    current_player = players[player_num]
+    $('#current_player').html(current_player.name)
     $('#current_phase').html(phase[current_phase])
-    $('#deck_count').html(players[current_player].deck.length)
-    $('#discard_count').html(players[current_player].discard.length)
-    $('#actions').html(players[current_player].actions)
-    $('#buys').html(players[current_player].buys)
-    $('#coins').html(players[current_player].coins)
-    for (var i = 0; i < num_players; i++){
-      var list_item = (`<li>${players[i].name}'s score: ${players[i].score}</li>`)
-      $('#score_board').append(list_item)
+    $('#deck_count').html(current_player.deck.length)
+    $('#discard_count').html(current_player.discard.length)
+    $('#actions').html(current_player.actions)
+    $('#buys').html(current_player.buys)
+    $('#coins').html(current_player.coins)
+    update_score()
+    current_player.draw_hand()
+    current_player.display_hand()
+
+  }
+  else {
+    //this is purely for debugging
+    num_of_players = 4
+    for (var i = 0; i < num_of_players; i++){
+      var name = `player${i}`
+      var player = new Player(name)
+      players.push(player)
     }
+    current_player = players[player_num]
+    $('#current_player').html(current_player.name)
+    $('#current_phase').html(phase[current_phase])
+    $('#deck_count').html(current_player.deck.length)
+    $('#discard_count').html(current_player.discard.length)
+    $('#actions').html(current_player.actions)
+    $('#buys').html(current_player.buys)
+    $('#coins').html(current_player.coins)
+    update_score()
+    current_player.draw_hand()
+    current_player.display_hand()
   }
 
   //stay in game loop until game_over is true
@@ -74,7 +116,7 @@ $(document).ready(function(){
   // display players turn
   $('#current_player').click(function(){
     next_player()
-    $('#current_player').html(players[current_player].name)
+    $('#current_player').html(current_player.name)
   });
 
   //count donw cards as you buy from piles
@@ -84,5 +126,9 @@ $(document).ready(function(){
   clickme.click(function(){
     card_count -= 1;
     countDisplay.html(card_count)
+
+  $('.card').click(function(){
+    console.log($(this))
+  });
   });
 });

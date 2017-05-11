@@ -29,6 +29,7 @@ input[type=text] {
 
 .card {
   padding: 5px;
+  margin: 5px;
   list-style: none;
   border-style: solid;
   border-width: 1px;
@@ -66,4 +67,20 @@ input[type=text] {
 }
 .played_cards{
   width: 80%;
+}
+
+.player_hand{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.treasure, .victory, .action{
+  margin : 5px;
+  padding : 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }

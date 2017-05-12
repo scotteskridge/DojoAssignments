@@ -39,7 +39,24 @@ function next_phase(){
   }
   return current_phase
 }
-
+var turn_counter = 0
+function action_phase(){
+  console.log("It's the action phase")
+  next_phase()
+}
+function buy_phase(){
+  console.log("It's the buy phase")
+  next_phase()
+}
+function cleanup_phase(){
+  console.log("It's the cleanup phase")
+  next_phase()
+  next_player()
+  turn_counter += 1
+  if (turn_counter > 4){
+    game_over = true
+  }
+}
 function update_score(){
   for (var player of players){
     player.tally_score()
@@ -47,6 +64,16 @@ function update_score(){
     $('#score_board').append(list_item)
   }
 }
+function display_winner(){
+  var winner = current_player;
+  for (var player of players){
+    if (player.score > winner.score){
+      winner = player
+    }
+  }
+  alert(`${winner.name} is the winner!`)
+}
+
 
 
 
@@ -104,6 +131,13 @@ $(document).ready(function(){
   }
 
   //stay in game loop until game_over is true
+while (!game_over){
+  action_phase()
+  buy_phase()
+  cleanup_phase()
+}
+update_score()
+display_winner()
 
   //advance phase
   $('#next_phase').click(function(){

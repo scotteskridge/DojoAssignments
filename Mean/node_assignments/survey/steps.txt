@@ -1,0 +1,20 @@
+1) make a folder structure
+    project level
+      static
+        css
+          main.css
+        img
+
+      views
+        main.html
+        page2.html
+
+2) npm init - y
+    edit package.json as needed
+
+3) install node packages
+    npm install express ejs --save
+    // the --save updates the package.json file
+
+4) link to git
+    add git repository to package.json

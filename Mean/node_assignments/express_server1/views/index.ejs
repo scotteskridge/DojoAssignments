@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <link rel="stylesheet" href="/css/main.css">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>This is a Static HTML page!</h1>
-  </body>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <form action="/result" method="post">
+        <div id="name">
+            <label for="name">Your Name: </label>
+            <input type="text" name="name" id="">
+        </div>
+        <div id="location">
+            <label for="location">Dojo Location: </label>
+            <select name="dojo_location">
+			  <option value="Mountain View">Mountain View</option>
+			  <option value="Seattle, WA">Seattle, WA</option>
+			  <option value="Los Angeles">Los Angeles</option>
+			  <option value="Canada">Canada</option>
+			</select>
+        </div>
+        <div id="language">
+            <label for="language">Favorite Language: </label>
+            <select name="favorite_language">
+			  <option value="NodeJs">NodeJs</option>
+			  <option value="PHP">PHP</option>
+			  <option value="Express">Express</option>
+			  <option value="Javascript">Javascript</option>
+			</select>
+        </div>
+        <div id="comment">
+            <label for="comment">Comment (optional):</label>
+            <textarea name="comment"></textarea>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <h1>To MongoDB</h1>
+    <form action="/users", method = "post">
+        <div id="name">
+            <label for="name">Your Name: </label>
+            <input type="text" name="name" id="">
+        </div>
+        <div id="age">
+            <label for="age">Your age: </label>
+            <input type="number" name="age" id="">
+        </div>
+         <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        <h2>Here are all the users:</h2>
+        <% for (var i = 0; i < users.length; i++) { %>
+            <h3>Name: <%= users[i].name %></h3>
+            <h4>Age: <%= users[i].age %></h4>
+            <hr>
+        <% } %>
+    </ul>
+
+</body>
+
 </html>

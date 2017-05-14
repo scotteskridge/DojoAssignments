@@ -11,10 +11,10 @@
   "license": "ISC",
   "keywords": [],
   "dependencies": {
-    "mongoose": "^4.9.8",
     "body-parser": "^1.13.3",
     "ejs": "^2.3.3",
     "express": "^4.13.3",
+    "mongoose": "^4.9.9",
     "socket.io": "^1.3.6"
   }
 }

@@ -13,7 +13,7 @@
     edit package.json as needed
 
 3) install node packages
-    npm install express ejs --save
+    npm install express ejs body-parser mongoose socket.io --save
     // the --save updates the package.json file
 
 4) link to git

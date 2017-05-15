@@ -5,7 +5,7 @@ let path = require("path");
 let bodyParser = require('body-parser');
 let user = require('./models/user.js')
 require('./config/setup.js')
-require('./config/routes.js')
+require('./config/routes.js')(app)
 
 const PORT = 5000
 
@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 
-let route = require('./config/routes.js')(app);
+// let route = require('./config/routes.js');
 
 
 

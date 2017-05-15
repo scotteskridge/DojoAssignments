@@ -1,0 +1,39 @@
+1) make a folder structure
+    project level
+
+        config
+            
+            mongoose.js
+
+        models
+            User.js
+            Message.js
+            
+
+        views
+            static
+                css
+                    main.css
+                img
+                js
+                    main.js
+            index.html //dashboard
+            page2.html
+            login.html
+
+        controllers
+            routes.js
+            users.js
+            messages.js
+
+    
+
+2) npm init - y
+    edit package.json as needed
+
+3) install node packages
+    npm install express ejs body-parser mongoose socket.io --save
+    // the --save updates the package.json file
+
+4) link to git
+    add git repository to package.json

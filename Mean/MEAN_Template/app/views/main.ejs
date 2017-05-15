@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <a href="/login">Login</a>
+    <a href="/">Index</a>
+    <a href="/back">Back</a>
+    <a href="/logout">Logout</a>
+    <h2>Here are the awesome quotes!</h2>
+    <% for (var i in quotes) { %>
+        <h3>Name:
+            <%= quotes[i].name %>
+        </h3>
+        <h3>Quote:
+            <%= quotes[i].quote %>
+        </h3>
+        <hr>
+        <% } %>
+</body>
+
+</html>

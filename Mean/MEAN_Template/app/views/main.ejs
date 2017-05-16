@@ -10,12 +10,12 @@
     <a href="/back">Back</a>
     <a href="/logout">Logout</a>
     <h2>Here are the awesome quotes!</h2>
-    <% for (var i in quotes) { %>
+    <% for (var i in messages) { %>
         <h3>Name:
-            <%= quotes[i].name %>
+            <%= messages[i].name %>
         </h3>
         <h3>Quote:
-            <%= quotes[i].quote %>
+            <%= messages[i].message %>
         </h3>
         <hr>
         <% } %>

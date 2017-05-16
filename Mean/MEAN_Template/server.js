@@ -1,7 +1,11 @@
 var express = require("express");
 var path = require("path");
 var app = express();
+
 // require bodyParser to have access to res.body
+// var ang = require('angular')
+// var ang = angular.module('ang', []);
+// console.log(ang);
 var bodyParser = require("body-parser");
 const PORT = 5000
 

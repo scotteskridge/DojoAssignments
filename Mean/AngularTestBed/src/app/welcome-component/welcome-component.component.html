@@ -1,0 +1,34 @@
+<div (click)="testme()">
+    <p>Welcome {{ firstName | uppercase }}</p>
+    <h5 *ngIf='loggedIn'> Your logged in as Goku </h5>
+    <h5 *ngIf='!loggedIn'> Please log in. </h5>
+    <input type="checkbox" [(ngModel)]="loggedIn" name="loggedIn"> login toggler<br>
+
+
+    <p>{{loggedIn}}</p>
+    <p>{{aString | uppercase}}</p>
+    <p>{{scott | json}}</p>
+
+    <form (submit)="create_user()">
+        <p>First name:<input type="text" [(ngModel)]="new_user.first_name" name="first_name" value=""></p>
+
+        <p>Last name:<input type="text" [(ngModel)]="new_user.last_name" name="last_name" value=""></p>
+        <p>Age: <input type="number" [(ngModel)]="new_user.age" name="age" value="my_num"></p>
+        <p><input type="submit" name="submit" value="submit"></p>
+    </form>
+
+    {{new_user.first_name}}
+
+    <p *ngFor='let user of users'>
+        {{user.first_name | lowercase}} , {{user.last_name}}, {{user.age}}
+    </p>
+
+</div>
+
+<h2>Date formatting0</h2>
+<h4>Date: {{date | date: 'y-M-d'}}</h4>
+<h4>Date: {{date}}</h4>
+<h4>Date: {{date}}</h4>
+<h4>Date: {{date}}</h4>
+<h4>Date: {{date}}</h4>
+<h4>Date: {{date}}</h4>

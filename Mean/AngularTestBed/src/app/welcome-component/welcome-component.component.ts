@@ -24,11 +24,11 @@ export class WelcomeComponentComponent implements OnInit {
     // this.aString = "defualt"
   }
 
-  create_user(){
-    this.users.push(this.new_user)
-    this.new_user = new User
-    this.date = new Date
-  }
+  // create_user(){
+  //   this.users.push(this.new_user)
+  //   this.new_user = new User
+  //   this.date = new Date
+  // }
   testme(){
     console.log(this.loggedIn)
   }

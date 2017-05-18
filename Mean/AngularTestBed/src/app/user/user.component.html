@@ -1,0 +1,14 @@
+<form (submit)="create_user()">
+    <p>First name:<input type="text" [(ngModel)]="new_user.first_name" name="first_name" value=""></p>
+
+    <p>Last name:<input type="text" [(ngModel)]="new_user.last_name" name="last_name" value=""></p>
+    <p>Age: <input type="number" [(ngModel)]="new_user.age" name="age" value="my_num"></p>
+    <p><input type="submit" name="submit" value="submit"></p>
+</form>
+{{new_user.first_name}}{{new_user.last_name}}{{new_user.age}}
+
+<p *ngFor='let user of all_users' (click)='selectUser(user)'>
+    {{user.first_name}} {{user.last_name}} {{user.age}}
+</p>
+
+<app-inspect-user *ngIf='selectedUser' [selectedUser]='selectedUser' (save)='update_user($event)'></app-inspect-user>

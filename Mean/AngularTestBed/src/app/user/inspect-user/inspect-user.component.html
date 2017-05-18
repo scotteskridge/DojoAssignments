@@ -1,0 +1,10 @@
+<div>
+
+    <form (submit)='updateUser()'>
+        <p><strong>First Name:</strong> <input type="text" [(ngModel)]="new_user.first_name" name="first_name"></p>
+        <p><strong>Last Name:</strong> <input type="text" [(ngModel)]="new_user.last_name" name="last_name"> </p>
+        <p><strong>Age:</strong> <input type="number" [(ngModel)]="new_user.age" name="age"></p>
+        <input type="submit" name="submit" value="submit">
+    </form>
+
+</div>

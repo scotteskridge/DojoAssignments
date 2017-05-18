@@ -1,0 +1,18 @@
+<p>
+    notes works!
+</p>
+
+
+<a [routerLink]="['personal']">Personal Notes</a>
+<a [routerLink]="['public']">Public Notes</a>
+<a [routerLink]="['']">Home</a>
+<a [routerLink]="['35']">35</a>
+<hr>
+
+<div>
+    <a *ngFor='let note of all_notes' [routerLink]="[note.id]">{{note | json}} <br></a>
+
+</div>
+
+
+<router-outlet></router-outlet>

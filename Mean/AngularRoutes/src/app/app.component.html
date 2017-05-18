@@ -1,0 +1,22 @@
+<h1>
+    I'm at the top</h1>
+<h1>
+    {{title}}
+</h1>
+
+<a href='/notes'>Href Notes</a>
+<a href='/widget'>Href Widget</a>
+<br>
+
+<a [routerLink]="['notes']">Ang Notes</a>
+<a [routerLink]="['widget']">Ang Widget</a>
+<a [routerLink]="['']">Ang Home</a>
+<hr>
+
+<h1>I'm in the middle</h1>
+
+<a [routerLink]="['notes', 'public']">Public Notes</a>
+
+
+<h1>I'm at the bottom</h1>
+<router-outlet></router-outlet>

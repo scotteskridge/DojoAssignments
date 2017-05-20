@@ -6,7 +6,7 @@ module.exports = function(app) {
 
     app.get('/get_friends', friends.get_friends)
     app.post('/create', friends.create)
-    app.put('/update/:id', friends.update);
-    app.delete('/friends/:id', friends.delete);
+    app.put('/update/:id', friends.update)
+    app.delete('/friends/:id', friends.delete)
     app.get('/show/:id', friends.show)
 }

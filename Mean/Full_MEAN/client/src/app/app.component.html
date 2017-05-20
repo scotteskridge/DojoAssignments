@@ -1,0 +1,27 @@
+<h1>
+    All your friends!
+</h1>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Show</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>Scott Sample</td>
+        <td>Show (route param)</td>
+        <td>edit (route param) </td>
+        <td>delete (route param)</td>
+    </tr>
+    <tr *ngFor=" let friend of all_friends">
+        <td>friend.firstName friend.lastName</td>
+        <td>Show (route param)</td>
+        <td>edit (route param) </td>
+        <td>delete (route param)</td>
+    </tr>
+
+
+</table>

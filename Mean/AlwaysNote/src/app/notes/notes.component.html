@@ -1,6 +1,28 @@
-<p>
-    notes works!
-</p>
+<form (submit)="create_note()">
+    <p>Note:<input type="text" [(ngModel)]='new_note.content' name="content" value="defualt value"></p>
+    <input type="submit" name="submit" value="submit">
+</form>
 
-<p>The edit child:</p>
+{{new_note.content}}
+
+<h1 (click)='!toggler'>List of all notes</h1>
+
+
+<table *ngIf='toggler'>
+    <tr>
+        <th>Id</th>
+        <th>Note</th>
+        <th>Date Created</th>
+        <th>Date Updated</th>
+    </tr>
+    <tr *ngFor='let note of all_notes'>
+        <td>{{note.id}}</td>
+        <td>{{note.content}}</td>
+        <td>{{note.created_at | date : 'shortDate'}}</td>
+        <td>{{note.updated_at | date : 'shortDate'}}</td>
+    </tr>
+
+</table>
+
+
 <app-notes-edit></app-notes-edit>

@@ -8,6 +8,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { CreateFriendComponent } from './friends/create-friend/create-friend.component';
 import { InspectFriendComponent } from './friends/inspect-friend/inspect-friend.component';
 import { EditFriendComponent } from './friends/edit-friend/edit-friend.component';
+import { FriendsService } from "./friends/friends.service"
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { EditFriendComponent } from './friends/edit-friend/edit-friend.component
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [FriendsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

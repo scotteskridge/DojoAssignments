@@ -17,7 +17,10 @@ class Friends {
     create(req, res) {
         let new_friend = new Friend(req.body)
         new_friend.save()
-            .then(() => { res.json(true) })
+            .then(() => { 
+                console.log("and then the server sent a friend", new_friend)
+                res.json(true)
+                 })
             .catch(err => {
                 console.log("Book save")
             })
@@ -25,20 +28,40 @@ class Friends {
     }
 
     update(req, res) {
-        //this should look an aweful lot like the create but need
+        //this should look an aweful lot like the show or inspect but need
         //the mongoose version of update note .save()
-        res.json({ placeholder: 'update' });
+        Friend.findOne({_id : req.params.id})
+            .then(friend => { 
+                friend.firstName = req.params.firstName
+                friend.lastName = req.params.lastName
+                friend.birthdate = req.params.birthdate
+                res.json(friend) 
+            })
+            .catch(err => {
+                console.log("Friends find error", err)
+                res.status(500).json(err)
+            })
     }
 
     delete(req, res) {
-        //again find a friend by id and then use mongoose to destroy it
-        res.json({ placeholder: 'delete' });
+       Friend.remove({_id : req.params.id})
+            .then(() => {res.json(true)})
+            .catch(err => {
+                console.log("Friends find error", err)
+                res.status(500).json(err)
+            })
     }
 
     show(req, res) {
-        //going to need to do a find based on the req.body.id
+        //going to need to do a find based on the req.body._id
         //and then return that one friend
-        res.json({ placeholder: 'show' });
+        
+        Friend.findOne({_id : req.params.id})
+            .then(friend => { res.json(friend) })
+            .catch(err => {
+                console.log("Friends find error", err)
+                res.status(500).json(err)
+            })
     }
 }
 

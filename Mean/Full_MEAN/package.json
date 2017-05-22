@@ -1,20 +1,20 @@
 {
-    "name": "MEANFriends",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
-    },
-    "keywords": [],
-    "author": "Scott Eskridge",
-    "license": "ISC",
-    "dependencies": {
-        "body-parser": "^1.17.2",
-        "express": "^4.15.3",
-        "mongoose": "^4.10.0"
-    },
-    "devDependencies": {},
-    "description": ""
+  "name": "MEANFriends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Scott Eskridge",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.0"
+  },
+  "devDependencies": {}
 }

@@ -1,3 +1,10 @@
-<p>
-  edit-friend works!
-</p>
+<h3>Edit Friend details</h3>
+
+<form action="">
+  <p>First Name: <input type="text" value="{{selectedFriend.firstName}}"> </p>
+  <p>Last Name: <input type="text" value="{{selectedFriend.lastName}}"> </p>
+  <p>Birthdate: <input type="date" value="{{selectedFriend.birthdate}}"> </p>
+   <button (click)="update_friend()" name="create">Update Friend</button>
+</form>
+
+

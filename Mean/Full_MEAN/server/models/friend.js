@@ -2,9 +2,12 @@ console.log('friends model');
 var mongoose = require('mongoose');
 
 let FriendSchema = new mongoose.Schema({
-    first_name: String,
-    last_name: String,
-    birthdate: Date
+    firstName : String,
+    lastName : String,
+    birthdate : Date
 }, { timestamps: true })
+
+// these fields must match your object keys on your 
+//client side models as well
 
 mongoose.model("Friend", FriendSchema)

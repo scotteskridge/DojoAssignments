@@ -1,3 +1,30 @@
-<p>
-  friends works!
-</p>
+<h2>The selected friend</h2>
+
+{{testData  | json}}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Show</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>Scott Sample</td>
+        <td>Show (route param)</td>
+        <td>edit (route param) </td>
+        <td>delete (route param)</td>
+    </tr>
+    <tr *ngFor= "let friend of all_friends">
+        <td>{{friend.firstName}} {{friend.lastName}}</td>
+        <td><a (click)='inspectFriend(friend._id)'>Show</a></td>
+        <td><a (click)="editFriend(friend._id)">Edit</a></td>
+        <td><a >{{friend._id}}</a></td>
+    </tr>
+</table>
+
+
+
+<app-create-friend *ngIf ="!edit" (refresh)='updateFriendsList()'></app-create-friend>
+<app-edit-friend *ngIf ="edit" [selectedFriend]='selectedFriend' (refresh)='updateFriendsList()'></app-edit-friend>
+<app-inspect-friend *ngIf ="selectedFriend" [selectedFriend]='selectedFriend' ></app-inspect-friend>
+

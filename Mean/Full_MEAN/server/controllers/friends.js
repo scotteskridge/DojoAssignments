@@ -17,10 +17,10 @@ class Friends {
     create(req, res) {
         let new_friend = new Friend(req.body)
         new_friend.save()
-            .then(() => { 
+            .then(() => {
                 console.log("and then the server sent a friend", new_friend)
                 res.json(true)
-                 })
+            })
             .catch(err => {
                 console.log("Book save")
             })
@@ -30,12 +30,15 @@ class Friends {
     update(req, res) {
         //this should look an aweful lot like the show or inspect but need
         //the mongoose version of update note .save()
-        Friend.findOne({_id : req.params.id})
-            .then(friend => { 
-                friend.firstName = req.params.firstName
-                friend.lastName = req.params.lastName
-                friend.birthdate = req.params.birthdate
-                res.json(friend) 
+        Friend.findOne({ _id: req.body._id })
+            .then(friend => {
+                console.log("trying to update this friend:", friend)
+                friend.firstName = req.body.firstName
+                friend.lastName = req.body.lastName
+                friend.birthdate = req.body.birthdate
+                friend.save()
+                    // console.log("after the update this friend:", friend)
+                res.json(friend)
             })
             .catch(err => {
                 console.log("Friends find error", err)
@@ -44,8 +47,9 @@ class Friends {
     }
 
     delete(req, res) {
-       Friend.remove({_id : req.params.id})
-            .then(() => {res.json(true)})
+        // console.log("the server is trying to delete this _id", req.params.id)
+        Friend.remove({ _id: req.params.id })
+            .then(() => { res.json(true) })
             .catch(err => {
                 console.log("Friends find error", err)
                 res.status(500).json(err)
@@ -53,10 +57,12 @@ class Friends {
     }
 
     show(req, res) {
+        // console.log("the server is trying to show this _id", req.params.id)
         //going to need to do a find based on the req.body._id
         //and then return that one friend
-        
-        Friend.findOne({_id : req.params.id})
+
+
+        Friend.findOne({ _id: req.params.id })
             .then(friend => { res.json(friend) })
             .catch(err => {
                 console.log("Friends find error", err)

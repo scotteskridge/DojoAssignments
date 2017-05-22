@@ -1,30 +1,25 @@
 <h2>The selected friend</h2>
 
-{{testData  | json}}
 <table>
     <tr>
         <th>Name</th>
         <th>Show</th>
         <th>Update</th>
         <th>Delete</th>
+        <th>ID</th>
     </tr>
-    <tr>
-        <td>Scott Sample</td>
-        <td>Show (route param)</td>
-        <td>edit (route param) </td>
-        <td>delete (route param)</td>
-    </tr>
-    <tr *ngFor= "let friend of all_friends">
+    <tr *ngFor="let friend of all_friends">
         <td>{{friend.firstName}} {{friend.lastName}}</td>
-        <td><a (click)='inspectFriend(friend._id)'>Show</a></td>
-        <td><a (click)="editFriend(friend._id)">Edit</a></td>
-        <td><a >{{friend._id}}</a></td>
+        <td><a (click)='inspectFriend(friend._id)' (click)='toggle("show", friend._id)'>Show</a></td>
+        <td><a (click)="updateFriend(friend._id)" (click)='toggle("update", friend._id)'>update</a></td>
+        <td><a (click)="deleteFriend(friend._id)">Delete</a></td>
+        <td>{{friend._id}}</td>
     </tr>
 </table>
+<button (click)='toggle("create")'>Add Friend</button>
 
 
 
-<app-create-friend *ngIf ="!edit" (refresh)='updateFriendsList()'></app-create-friend>
-<app-edit-friend *ngIf ="edit" [selectedFriend]='selectedFriend' (refresh)='updateFriendsList()'></app-edit-friend>
-<app-inspect-friend *ngIf ="selectedFriend" [selectedFriend]='selectedFriend' ></app-inspect-friend>
-
+<app-create-friend *ngIf="components.create" (refresh)='updateFriendsList()'></app-create-friend>
+<app-edit-friend *ngIf="components.update" [selectedFriend]='selectedFriend' (refresh)='updateFriendsList()'></app-edit-friend>
+<app-inspect-friend *ngIf="components.show" [selectedFriend]='selectedFriend'></app-inspect-friend>

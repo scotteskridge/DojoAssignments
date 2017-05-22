@@ -31,7 +31,14 @@ export class FriendsService {
   }
 
   update_friend(friend){
+    // console.log("The service tried to edit this friedn:", friend)
     return this.http.post(`/update`, friend, OPTIONS).toPromise()
+
+  }
+
+  delete_friend(_id){
+    // console.log("The service is trying to delete", _id)
+    return this.http.post(`/delete/${_id}`, OPTIONS).toPromise()
 
   }
 }

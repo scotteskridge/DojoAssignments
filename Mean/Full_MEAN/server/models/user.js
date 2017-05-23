@@ -16,7 +16,7 @@ const mongoose = require('mongoose');
 //    return emailRegex.test(email.text); // Assuming email has a text attribute
 // }, 'The e-mail field cannot be empty.')
 
-let userSchema = new mongoose.Schema({
+let UserSchema = new mongoose.Schema({
     name: {
         first: {
             type: String,
@@ -77,9 +77,11 @@ let userSchema = new mongoose.Schema({
         }
     },
 
-    friends: [FriendSchema]
+    friends: {
+        type: String
+    }
 
 }, { timestamps: true })
 
 
-mongoose.model("User", FriendSchema)
+mongoose.model("User", UserSchema)

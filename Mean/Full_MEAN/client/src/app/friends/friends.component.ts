@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Friend } from "./Friend"
 import { FriendsService } from "./friends.service" 
+// import {LocalStorageService, LocalStorage} from 'ng2-webstorage';
 
 @Component({
   selector: 'app-friends',
@@ -14,25 +15,57 @@ export class FriendsComponent implements OnInit {
   selectedFriend = new Friend
   inspectedID;
   show = false
-  // update = false
-  // create = false
-  // inspect = false
-  testData = [] //dummy var to use the service to pass thigns around
-  //you'll want to change this to the inspected user so that only need one bool
-  //but this hack works for now
+  mystoredval
+
+  //I dont actually need both of these
+  // localstorage = window['localStorage']
+  storage = window['localStorage']
+  // localStorage.mystoredval= "a stored string";
+  
 
   @Output() logout = new EventEmitter
-  constructor( private friends_service: FriendsService) { }
+  constructor( private friends_service: FriendsService) {
+    this.mystoredval = this.storage.message
+   }
 
   ngOnInit() {
     this.updateFriendsList()
     this.selectedFriend = new Friend
     // console.log("init the selected friend ",this.selectedFriend)  
     //this.testData= this.friends_service.testData  //dummy var to use the service to pass thigns around
-    }
+    if (this.storageAvailable('localStorage')) {
+     console.log('Yippee! We can use localStorage awesomeness')
+      }
+      else {
+	    console.log('Too bad, no localStorage for us')
+    
+    
+    }   
+  }
+
+  saveStorage(){
+    
+    this.storage.message = this.mystoredval
+    console.log("the storage is", this.storage.message)
+    console.log("I saved it from", this.mystoredval)
+    this.mystoredval = ''
+    console.log("but now I cleared the local value", this.mystoredval)
+  }
+
+  showStorage(){
+    console.log("the storage is", this.storage.message)
+    this.mystoredval = this.storage.message
+  }
+  inspectStorage(){
+    console.log("the storage object is", this.storage)
+    // console.log("the storage object is", this.storage)
+    
+  }
+
 
   inspectFriend(_id){
     //find a friend by id and then set the result to this.selected_friend
+    // console.log(_id)
     this.friends_service.find_a_friend(_id)
       .then((friend) => {    
         this.selectedFriend = friend
@@ -49,10 +82,10 @@ export class FriendsComponent implements OnInit {
   }
 
   deleteFriend(_id){
-    console.log("the id to delete is ", _id)
+    // console.log("the id to delete is ", _id)
     this.friends_service.delete_friend(_id )
       .then((data) => {
-        console.log("front end is trying to delete this id", _id)
+        // console.log("front end is trying to delete this id", _id)
         this.selectedFriend = new Friend
         // this.selectedFriend= new Friend
         //emit an event to cause the parent to knwo to refresh
@@ -96,6 +129,33 @@ export class FriendsComponent implements OnInit {
   clearUser(){
     this.logout.emit()
   }
+
+  storageAvailable(type) {
+    try {
+        // var storage = window[type],
+           let x = '__storage_test__';
+        this.storage.setItem(x, x);
+        console.log(this.storage[x])
+        this.storage.test = "a test string"
+        console.log(this.storage.test)
+        this.storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+            // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            this.storage.length !== 0;
+    }
+}
   
 
 

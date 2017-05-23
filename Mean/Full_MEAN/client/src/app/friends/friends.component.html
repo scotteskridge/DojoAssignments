@@ -1,4 +1,11 @@
 <h2>These are your friends</h2>
+
+{{mystoredval}}
+<p>Locale storage test:<input type="text" [(ngModel)] = "mystoredval" name="mystoredval" value="mystoredval" ></p>
+<button (click)="saveStorage()" >Save</button>
+<button (click)="showStorage()" >Whats in storage</button>
+<button (click)="inspectStorage()" >what is the storage object</button>
+<br>
 <p class="link" (click)="clearUser()">Logout</p>
 
 <table>
@@ -7,14 +14,13 @@
         <th>Show</th>
         <th>Update</th>
         <th>Delete</th>
-        <th>ID</th>
+        
     </tr>
     <tr *ngFor="let friend of all_friends">
         <td>{{friend.firstName}} {{friend.lastName}}</td>
         <td><a (click)='inspectFriend(friend._id); toggle("show", friend._id)'>Show</a></td>
         <td><a (click)="updateFriend(friend._id)" (click)='toggle("update", friend._id)'>update</a></td>
-        <td><a (click)="deleteFriend(friend._id)">Delete</a></td>
-        <td>{{friend._id}}</td>
+        
     </tr>
 </table>
 <button (click)='toggle("create")'>Add Friend</button>

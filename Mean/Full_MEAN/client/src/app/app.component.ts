@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  currentUser;
+  welcomeMessage = "Please Log In to continue"
   
+  constructor(){}
+
+  clearUser(){
+    this.welcomeMessage = "Please Log In to continue"
+    this.currentUser = false
+  }
+
 }

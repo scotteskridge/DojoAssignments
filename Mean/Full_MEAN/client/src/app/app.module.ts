@@ -8,7 +8,10 @@ import { FriendsComponent } from './friends/friends.component';
 import { CreateFriendComponent } from './friends/create-friend/create-friend.component';
 import { InspectFriendComponent } from './friends/inspect-friend/inspect-friend.component';
 import { EditFriendComponent } from './friends/edit-friend/edit-friend.component';
-import { FriendsService } from "./friends/friends.service"
+import { FriendsService } from "./friends/friends.service";
+import { UserLoginComponent } from './user-login/user-login.component';
+import { LoginComponent } from './user-login/login/login.component';
+import { RegisterComponent } from './user-login/register/register.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FriendsService } from "./friends/friends.service"
     FriendsComponent,
     CreateFriendComponent,
     InspectFriendComponent,
-    EditFriendComponent
+    EditFriendComponent,
+    UserLoginComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

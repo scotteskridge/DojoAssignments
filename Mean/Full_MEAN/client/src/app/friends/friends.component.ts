@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Friend } from "./Friend"
 import { FriendsService } from "./friends.service" 
 
@@ -9,25 +9,26 @@ import { FriendsService } from "./friends.service"
 })
 export class FriendsComponent implements OnInit {
   all_friends = []
-  components = {create : true, update: false, show: false}
+  components = {create : true, update: false, show: false, anotherapp: false}
   sample_friend = new Friend
   selectedFriend = new Friend
   inspectedID;
   show = false
-  update = false
-  create = false
-  inspect = false
+  // update = false
+  // create = false
+  // inspect = false
   testData = [] //dummy var to use the service to pass thigns around
   //you'll want to change this to the inspected user so that only need one bool
   //but this hack works for now
 
+  @Output() logout = new EventEmitter
   constructor( private friends_service: FriendsService) { }
 
   ngOnInit() {
     this.updateFriendsList()
     this.selectedFriend = new Friend
     // console.log("init the selected friend ",this.selectedFriend)  
-    this.testData= this.friends_service.testData  //dummy var to use the service to pass thigns around
+    //this.testData= this.friends_service.testData  //dummy var to use the service to pass thigns around
     }
 
   inspectFriend(_id){
@@ -64,12 +65,7 @@ export class FriendsComponent implements OnInit {
 
 // take in a name of commponent and a _id and swap on/off as needed
   toggle(toggler, _id){
-    
-    console.log("the _id is:", _id)
-    console.log("the inspected id is:",this.inspectedID )
-    console.log("the friend is:", this.selectedFriend)
-    console.log(toggler)
-    
+   
     for (let component in this.components ){
       if(toggler == component){
         if(_id == undefined){
@@ -95,6 +91,10 @@ export class FriendsComponent implements OnInit {
       })
       .catch((err) => {console.log(err)})
 
+  }
+
+  clearUser(){
+    this.logout.emit()
   }
   
 

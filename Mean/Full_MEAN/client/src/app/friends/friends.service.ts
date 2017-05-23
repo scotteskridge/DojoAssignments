@@ -8,7 +8,7 @@ const OPTIONS = new RequestOptions({headers : HEADERS})
 
 @Injectable()
 export class FriendsService {
-  testData= [1,2.3]
+  // testData= [1,2.3]
 
   constructor(private http: Http) {
 

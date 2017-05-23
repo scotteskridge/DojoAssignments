@@ -1,4 +1,5 @@
-<h2>The selected friend</h2>
+<h2>These are your friends</h2>
+<p class="link" (click)="clearUser()">Logout</p>
 
 <table>
     <tr>
@@ -10,7 +11,7 @@
     </tr>
     <tr *ngFor="let friend of all_friends">
         <td>{{friend.firstName}} {{friend.lastName}}</td>
-        <td><a (click)='inspectFriend(friend._id)' (click)='toggle("show", friend._id)'>Show</a></td>
+        <td><a (click)='inspectFriend(friend._id); toggle("show", friend._id)'>Show</a></td>
         <td><a (click)="updateFriend(friend._id)" (click)='toggle("update", friend._id)'>update</a></td>
         <td><a (click)="deleteFriend(friend._id)">Delete</a></td>
         <td>{{friend._id}}</td>

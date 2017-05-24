@@ -16,11 +16,7 @@ export class FriendsComponent implements OnInit {
   inspectedID;
   show = false
   mystoredval
-
-  //I dont actually need both of these
-  // localstorage = window['localStorage']
   storage = window['localStorage']
-  // localStorage.mystoredval= "a stored string";
   
 
   @Output() logout = new EventEmitter

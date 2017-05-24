@@ -1,10 +1,10 @@
 <h2>These are your friends</h2>
 
 {{mystoredval}}
-<p>Locale storage test:<input type="text" [(ngModel)] = "mystoredval" name="mystoredval" value="mystoredval" ></p>
-<button (click)="saveStorage()" >Save</button>
-<button (click)="showStorage()" >Whats in storage</button>
-<button (click)="inspectStorage()" >what is the storage object</button>
+<p>Locale storage test:<input type="text" [(ngModel)]="mystoredval" name="mystoredval" value="mystoredval"></p>
+<button (click)="saveStorage()">Save</button>
+<button (click)="showStorage()">Whats in storage</button>
+<button (click)="inspectStorage()">what is the storage object</button>
 <br>
 <p class="link" (click)="clearUser()">Logout</p>
 
@@ -14,13 +14,14 @@
         <th>Show</th>
         <th>Update</th>
         <th>Delete</th>
-        
+
     </tr>
     <tr *ngFor="let friend of all_friends">
         <td>{{friend.firstName}} {{friend.lastName}}</td>
         <td><a (click)='inspectFriend(friend._id); toggle("show", friend._id)'>Show</a></td>
         <td><a (click)="updateFriend(friend._id)" (click)='toggle("update", friend._id)'>update</a></td>
-        
+        <td><a (click)="deleteFriend(friend._id)" (click)='toggle("delete", friend._id)'>delete</a></td>
+
     </tr>
 </table>
 <button (click)='toggle("create")'>Add Friend</button>

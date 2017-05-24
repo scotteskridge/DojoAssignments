@@ -11,7 +11,10 @@ import { EditFriendComponent } from './friends/edit-friend/edit-friend.component
 import { FriendsService } from "./friends/friends.service";
 import { UserLoginComponent } from './user-login/user-login.component';
 import { LoginComponent } from './user-login/login/login.component';
-import { RegisterComponent } from './user-login/register/register.component'
+import { RegisterComponent } from './user-login/register/register.component';
+import { UserCrudComponent } from './user-login/user-crud/user-crud.component';
+import { UserService } from "app/user-login/user.service";
+
 
 @NgModule({
   declarations: [
@@ -22,14 +25,16 @@ import { RegisterComponent } from './user-login/register/register.component'
     EditFriendComponent,
     UserLoginComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserCrudComponent,
+   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [FriendsService],
+  providers: [FriendsService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

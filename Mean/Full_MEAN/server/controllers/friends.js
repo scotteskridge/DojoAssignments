@@ -22,7 +22,7 @@ class Friends {
                 res.json(true)
             })
             .catch(err => {
-                console.log("Book save")
+                console.log("Friend save")
             })
         res.json({ placeholder: 'create' });
     }

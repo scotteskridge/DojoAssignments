@@ -17,28 +17,28 @@ export class FriendsService {
    }
 
   get_all_friends(){
-    return this.http.get("/get_friends")
+    return this.http.get("/friend/get_friends")
       .map(data => data.json())
       .toPromise()
   }
 
   create_friend(friend: Friend){
-    return this.http.post("/create", friend, OPTIONS).toPromise()
+    return this.http.post("/friend/create", friend, OPTIONS).toPromise()
   }
   find_a_friend(_id){
-    return this.http.get(`/show/${_id}`)
+    return this.http.get(`/friend/show/${_id}`)
     .map(data => data.json()).toPromise()
   }
 
   update_friend(friend){
     // console.log("The service tried to edit this friedn:", friend)
-    return this.http.post(`/update`, friend, OPTIONS).toPromise()
+    return this.http.post(`/friend/update`, friend, OPTIONS).toPromise()
 
   }
 
   delete_friend(_id){
     // console.log("The service is trying to delete", _id)
-    return this.http.post(`/delete/${_id}`, OPTIONS).toPromise()
+    return this.http.post(`/friend/delete/${_id}`, OPTIONS).toPromise()
 
   }
 }

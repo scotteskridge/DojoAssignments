@@ -1,3 +1,8 @@
 <p>
-  user-login works!
+    Please login or register
 </p>
+
+
+<app-login></app-login>
+<app-register (refresh)="refresh()"></app-register>
+<app-user-crud [allUsers]="allUsers" (refresh)="refresh()"></app-user-crud>

@@ -23,6 +23,12 @@ let UserSchema = new mongoose.Schema({
             required: [true, "this is for something else"],
             trim: true,
         },
+        middle: {
+            type: String,
+            required: false,
+            trim: true
+
+        },
         last: {
             type: String,
             required: true,
@@ -32,20 +38,28 @@ let UserSchema = new mongoose.Schema({
 
     phone: {
         type: String,
-        validate: [{
-                validator: function(number) {
-                    return /\d{3}-\d{3}-\d{4}/.test(number);
-                },
-                message: "{ VALUE } is not a valid phone number"
-            },
-            {
-                validator: function(number) {
-                    return false;
-                },
-                message: "{ VALUE } failed this validator"
-            }
-        ],
+        // validate: [{
+        //         validator: function(number) {
+        //             return /\d{3}-\d{3}-\d{4}/.test(number);
+        //         },
+        //         message: "{ VALUE } is not a valid phone number"
+        //     },
+        //     {
+        //         validator: function(number) {
+        //             return false;
+        //         },
+        //         message: "{ VALUE } failed this validator"
+        //     }
+        // ],
         required: [true, "Customer phone number required"]
+    },
+
+    address: {
+        type: String
+    },
+
+    email: {
+        type: String
     },
 
     gender: {
@@ -56,10 +70,8 @@ let UserSchema = new mongoose.Schema({
         default: "MALE"
     },
 
-    age: {
-        type: Number,
-        min: [0, "Enter Valid age"],
-        max: [125, "Enter Valid age"],
+    birthdate: {
+        type: Date,
         required: true
     },
 
@@ -69,12 +81,12 @@ let UserSchema = new mongoose.Schema({
         required: true,
         minlength: 8,
         maxlength: 32,
-        validate: {
-            validator: function(value) {
-                return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,32}/.test(value);
-            },
-            message: "Password failed validation, you must have at least 1 number, uppercase and special character"
-        }
+        // validate: {
+        //     validator: function(value) {
+        //         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,32}/.test(value);
+        //     },
+        //     message: "Password failed validation, you must have at least 1 number, uppercase and special character"
+        // }
     },
 
     friends: {

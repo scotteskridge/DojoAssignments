@@ -114,7 +114,7 @@ export class FriendsComponent implements OnInit {
 
   updateFriendsList(){
     this.friends_service.get_all_friends()
-      .then((data) => {
+      .then(data => {
         // console.log(data)
         this.all_friends = data       
       })
